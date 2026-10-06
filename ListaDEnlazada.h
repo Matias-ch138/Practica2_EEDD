@@ -17,7 +17,9 @@ class ListaDEnlazada{
     ListaDEnlazada():cabecera_(0),cola_(0),tam_(0){}
 
     /**
-     * @brief constructor copia
+     * @brief Constructor Copia de @class ListaDEnlazada
+     * 
+     * @param origen la lista que va a ser copiada
      */
 
     ListaDEnlazada(const ListaDEnlazada& origen) : cabecera_(0), cola_(0), tam_(0) {
@@ -31,8 +33,9 @@ class ListaDEnlazada{
     
     /**
      * @brief operador asignación de @class ListaDenlazada
+     * @param origen lista enlazada que va a ser asignada
      */
-    ListaDEnlazada &operator =(const ListaDEnlazada<T>& origen){
+    ListaDEnlazada &operator =(const ListaDEnlazada& origen){
         if(this!=&origen){
             while(cabecera_!=0){
                 borraInicio();
@@ -46,17 +49,45 @@ class ListaDEnlazada{
         return *this;
     }
     
+    /**
+     * @brief devuelve el dato del inicio de la lista
+     * 
+     * @return T& el dato en la cabecera de la lista
+     */
     T& inicio(){
         return cabecera_->dato_;
     }
-
+    /**
+     * @brief devuelve el dato del final de la lista
+     * 
+     * @return T& el dato en la cola de la lista
+     */
     T& final(){
         return cola_->dato_;
     }
-    
+    /**
+     * @brief un iterador a cabecera
+     * 
+     * @return Iterador<T> el iterador a cabecera
+     */
     Iterador<T> iterador(){return Iterador<T> (cabecera_);}
+    /**
+     * @brief un iterador a cabcera
+     * 
+     * @return Iterador<T> el iterador a cabecera
+     */
     Iterador<T> iteradorInicio() { return Iterador<T> (cabecera_) ; }
+    /**
+     * @brief un iterador a cola
+     * 
+     * @return Iterador<T> el iterador a cola
+     */
     Iterador<T> iteradorFinal() { return Iterador<T>(cola_) ; }
+    /**
+     * @brief inserta en el final
+     * 
+     * @param dato el dato que queremos insertar
+     */
     void insertaFin(const T& dato){
         Nodo<T>* nuevo;
         nuevo=new Nodo<T>(dato,cola_,0);
@@ -69,8 +100,13 @@ class ListaDEnlazada{
         cola_=nuevo;
         tam_++;
     }
-
-    void inserta(Iterador<T> &i, const T& dato){
+    /**
+     * @brief inserta un dato en una posición intermedia
+     * 
+     * @param i iterador de la posición en el que queremos insertar el dato
+     * @param dato es el dato que queremos insertar en esa posición
+     */
+    void inserta(Iterador &i, const T& dato){
         if(i.nodo_ == cabecera_) {
             insertaInicio(dato);
         }else{
@@ -81,7 +117,11 @@ class ListaDEnlazada{
             tam_++;
         }
     }
-
+    /**
+     * @brief insercion al inicio
+     * 
+     * @param dato el dato que queremos insertar en el inicio
+     */
     void insertaInicio(const T& dato){
         Nodo<T>* nuevo;
         nuevo=new Nodo<T>(dato,0,cabecera_);
@@ -94,7 +134,10 @@ class ListaDEnlazada{
         cabecera_=nuevo;
         tam_++;
     }
-
+    /**
+     * @brief borra el primer dato de la lista
+     * 
+     */
     void borraInicio(){
         if(cabecera_==0) return;
             Nodo<T>* borrado=cabecera_;
@@ -108,7 +151,7 @@ class ListaDEnlazada{
             tam_--;
     }
     /**
-     * @brief 
+     * @brief borra el último dato de la lista
      * 
      */
     void borraFinal(){
@@ -123,11 +166,11 @@ class ListaDEnlazada{
             tam_--; 
     }
     /**
-     * @brief 
+     * @brief borra un dato intermedio
      * 
-     * @param i 
+     * @param i iterador apuntando al dato que queremos borrar
      */
-    void borra(Iterador<T> &i){
+    void borra(Iterador &i){
     if(i.nodo_ == 0) return;
     if(i.nodo_==cabecera_){
         borraInicio();
@@ -142,20 +185,20 @@ class ListaDEnlazada{
         }
     }
     /**
-     * @brief 
+     * @brief devuelve el tamaño de la lista
      * 
-     * @return unsigned int 
+     * @return unsigned int el tamaño de la lista
      */
     unsigned int tam(){
         return this->tam_;
     }
     /**
-     * @brief 
+     * @brief concatena dos listas enlazadas
      * 
-     * @param l 
-     * @return ListaDEnlazada<T>& 
+     * @param l es la lista que queremos concatenar
+     * @return ListaDEnlazada<T>& es la lista resultado de la concatenación de las dos listas
      */
-    ListaDEnlazada<T> &concatena(const ListaDEnlazada<T> &l){
+    ListaDEnlazada<T> &concatena(const ListaDEnlazada &l){
         ListaDEnlazada<T> resultado(*this);
         Nodo<T>* actual = l.cabecera_;
         while(actual !=0){
@@ -165,16 +208,16 @@ class ListaDEnlazada{
         return resultado;
     }
     /**
-     * @brief 
+     * @brief concatena dos listas enlazadas
      * 
-     * @param l 
-     * @return ListaDEnlazada<T>& 
+     * @param l es la lista que queremos concatenar
+     * @return ListaDEnlazada<T>& es la lista resultado de la concatenación de las dos listas
      */
-    ListaDEnlazada<T> &operator +(const ListaDEnlazada<T> &l){
+    ListaDEnlazada<T> &operator +(const ListaDEnlazada &l){
         return concatena(l);
     }
     /**
-     * @brief Destroza
+     * @brief borra una lista enlazada
      * 
      */
     ~ListaDEnlazada() {
