@@ -81,3 +81,8 @@ bool Especie::operator<(const Especie& origen) const{
 bool Especie::operator==(const Especie& origen) const{
     return codigoEspecie_ == origen.codigoEspecie_;
 }
+// Alias para que coincida con el uso de main.cpp 
+string Especie::get_codigo_especie() const { return codigoEspecie_; }
+string Especie::get_nombre_comun() const { return nombreComun_; }
+string Especie::get_nombre_cientifico() const { return nombreCientifico_; }
+string Especie::get_tipo_planta_str() const { return tipoPlanta_; }

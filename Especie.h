@@ -35,7 +35,7 @@ public:
         tipoPlanta_ = tipoPlanta;
     }
 
-    // Getters y setters tradicionales
+    // Getters y setters 
     string getcodigo_especie() const;
     void set_codigo_especie(string codigoEspecie);
     string getnombre_comun() const;
@@ -45,11 +45,11 @@ public:
     string gettipo_planta() const;
     void setTipoPlanta(string tipoPlanta);
 
-    // Alias para que coincida con el uso de main.cpp REVISAR=======================================================
-    string get_codigo_especie() const { return codigoEspecie_; }
-    string get_nombre_comun() const { return nombreComun_; }
-    string get_nombre_cientifico() const { return nombreCientifico_; }
-    string get_tipo_planta_str() const { return tipoPlanta_; }
+    // Alias para que coincida con el uso de main.cpp 
+    string get_codigo_especie() const;
+    string get_nombre_comun() const; 
+    string get_nombre_cientifico()const;
+    string get_tipo_planta_str()const;
 
     int get_tipo_planta() const {
         if (tipoPlanta_ == "ARBUSTO") return ARBUSTO;
