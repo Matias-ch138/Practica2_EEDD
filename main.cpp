@@ -1,5 +1,4 @@
 #include <iostream>
-#include <conio.h>
 
 #include "ControlParques.h"
 #include "LectorCSV.h"
@@ -30,7 +29,7 @@ Iterador<Parque> buscaParque(ListaDEnlazada<Parque>& lista, string nombre)
     return it;
 }
 
-bool buscaEspecieNbrComun(VDinamico<Especie*>& vector, string nombreComun)
+bool buscaEspecieNbrComun(const VDinamico<Especie*>& vector, string nombreComun)
 {
     int n = vector.gettLogico();
     for (int i = 0; i < n; ++i)
@@ -43,7 +42,7 @@ bool buscaEspecieNbrComun(VDinamico<Especie*>& vector, string nombreComun)
     return false;
 }
 
-bool buscaEspecieNbrCientif(VDinamico<Especie*>& vector, string nombreCentif)
+bool buscaEspecieNbrCientif(const VDinamico<Especie*>& vector, string nombreCentif)
 {
     int n = vector.gettLogico();
     for (int i = 0; i < n; ++i)
@@ -104,12 +103,12 @@ int main()
     for (int i = 0; i < 10; ++i)
     {
         lista.borraInicio();
-        lista.borraFin();
+        lista.borraFinal();
     }
     mostrarLista(lista);
 
     cout<<endl<<"PULSAR CUALQUIER TECLA PARA CONTINUAR"<<endl;
-    getch();
+    std::cin.get();
 
     cout << "PROGRAMA DE PRUEBA 2" << endl;
     ControlParques cp(RUTA_ESPECIES, RUTA_PARQUES);
@@ -132,14 +131,14 @@ int main()
             if ((tipo == ARBUSTO || tipo == CONIFERA || tipo == PALMACEA ||
                 tipo == HERB_PERENNES || tipo == FRONDOSA) && (resto == 0))
             {
-                pq.insertaEspecie(&esp);
+                pq.insertarEspecie(esp);
                 //Parques con codigo impar
             }
             else if ((tipo == TAPIZANTE_TREPADORA || tipo == CACTACEA_SUCULENTA ||
                 tipo == SUBTROPICAL_TROPICAL ||
                 tipo == HERB_ANUAL || tipo == HERB_ANUALES) && (resto == 1))
             {
-                pq.insertaEspecie(&esp);
+                pq.insertarEspecie(esp);
             }
         }
     }
@@ -188,7 +187,7 @@ int main()
     }
 
     //No debe estar
-    if (buscaEspecieNbrComun(madridRio.get_contains(), "Ananas comosa"))
+    if (buscaEspecieNbrCientif(madridRio.get_contains(), "Ananas comosa"))
     {
         cout << "  Encontrado Ananas comosa" << endl;
     }
@@ -211,13 +210,13 @@ int main()
 
     Iterador<Parque> it2 = buscaParque(cp.get_parks(), "VIVERO DE MIGAS CALIENTES");
     //Sí debe estar
-    if (it.fin())
+    if (it2.fin())
     {
         cout << "  No se ha encontrado parque VIVERO DE MIGAS CALIENTES" << endl;
     }
     else
     {
-        cout<<"  codigo: " << to_string(it.getdato().get_cod_parque()) <<" nombre: "<< it.getdato().get_nbre_parque()<< endl;
+        cout<<"  codigo: " << to_string(it2.getdato().get_cod_parque()) <<" nombre: "<< it2.getdato().get_nbre_parque()<< endl;
     }
 
     cout<< endl<<"BUSCAR ESPECIES CON LA SUBCADENA ROSA EN SU NOMBRE CIENTÍFICO"<<endl;
@@ -235,7 +234,7 @@ int main()
     int total = 0;
     for (it; !it.fin(); it.avanza())
     {
-       VDinamico<Especie*>  esp = it.getdato().get_contains();
+    const VDinamico<Especie*>& esp = it.getdato().get_contains();
         for (int i =0; i < esp.gettLogico(); ++i)
         {
             string nombreComun = esp[i]->get_nombre_comun();
@@ -247,7 +246,22 @@ int main()
         }
     }
     cout<<"  Total: "<<total<<endl;
-
+    cout<<"==========================="<<endl;
+    cout<<"Parte Parejas: "<<endl;
+    string parqueEliminar= "VIVERO DE MIGAS CALIENTES";
+    if(cp.eliminarParque(parqueEliminar)){
+        cout<<"Se ha borrado el parque cuyo nombre es: "<<parqueEliminar<<endl;
+    }else cout<<"No se ha borrado ningún parque"<<endl;
+    cout<<"Comprobación de que se ha eliminado el parque: "<<endl;
+    Iterador<Parque> it3 = buscaParque(cp.get_parks(), "VIVERO DE MIGAS CALIENTES");
+    if (it3.fin())
+    {
+        cout << "  No se ha encontrado parque VIVERO DE MIGAS CALIENTES" << endl;
+    }
+    else
+    {
+        cout<<"  codigo: " << to_string(it3.getdato().get_cod_parque()) <<" nombre: "<< it3.getdato().get_nbre_parque()<< endl;
+    }
 
 
     return 0;

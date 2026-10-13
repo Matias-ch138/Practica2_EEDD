@@ -1,11 +1,15 @@
+#ifndef NODO_H
+#define NODO_H
+
 #include <iostream>
-using namespace std;
 
 template<typename T>
-class Nodo{
+class Nodo {
     public:
     T dato_;
-    Nodo* ant_;
-    Nodo* sig_;
-    Nodo(T& aDato, Nodo* aAnt, Nodo* aSig)dato_(aDato),ant_(aAnt),sig_(aSig){};
+    Nodo<T>* ant_;
+    Nodo<T>* sig_;
+    Nodo(const T& aDato, Nodo<T>* aAnt, Nodo<T>* aSig) : dato_(aDato), ant_(aAnt), sig_(aSig) {}
 };
+
+#endif

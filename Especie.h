@@ -2,9 +2,8 @@
 #define ESPECIE_H
 
 #include <iostream>
-using namespace std;
 #include <string>
-
+using namespace std;
 
 enum TipoPlanta {
     ARBUSTO,
@@ -22,30 +21,37 @@ enum TipoPlanta {
 
 class Especie {
 private:
-string codigoEspecie_;
-string nombreComun_;
-string nombreCientifico_;
-string tipoPlanta_;
+    string codigoEspecie_;
+    string nombreComun_;
+    string nombreCientifico_;
+    string tipoPlanta_;
 
 public:
-Especie() = default;
-Especie(string codigoEspecie, string nombreComun, string nombreCientifico, string tipoPlanta){
-    codigoEspecie_ = codigoEspecie;
-    nombreComun_ = nombreComun;
-    nombreCientifico_ = nombreCientifico;
-    tipoPlanta_ = tipoPlanta;
-};
-//Getters and setters
-string getcodigo_especie() const;
-void set_codigo_especie(string codigoEspecie);
-string getnombre_comun() const;
-void setNombreComun(string nombreComun);
-string getnombre_cientifico() const;
-void setNombreCientifico(string nombreCientifico);
-string gettipo_planta() const;
-void setTipoPlanta(string tipoPlanta);
+    Especie() = default;
+    Especie(string codigoEspecie, string nombreComun, string nombreCientifico, string tipoPlanta) {
+        codigoEspecie_ = codigoEspecie;
+        nombreComun_ = nombreComun;
+        nombreCientifico_ = nombreCientifico;
+        tipoPlanta_ = tipoPlanta;
+    }
 
-int get_tipo_planta() const {
+    // Getters y setters tradicionales
+    string getcodigo_especie() const;
+    void set_codigo_especie(string codigoEspecie);
+    string getnombre_comun() const;
+    void setNombreComun(string nombreComun);
+    string getnombre_cientifico() const;
+    void setNombreCientifico(string nombreCientifico);
+    string gettipo_planta() const;
+    void setTipoPlanta(string tipoPlanta);
+
+    // Alias para que coincida con el uso de main.cpp REVISAR=======================================================
+    string get_codigo_especie() const { return codigoEspecie_; }
+    string get_nombre_comun() const { return nombreComun_; }
+    string get_nombre_cientifico() const { return nombreCientifico_; }
+    string get_tipo_planta_str() const { return tipoPlanta_; }
+
+    int get_tipo_planta() const {
         if (tipoPlanta_ == "ARBUSTO") return ARBUSTO;
         if (tipoPlanta_ == "CONIFERA") return CONIFERA;
         if (tipoPlanta_ == "PALMACEA") return PALMACEA;
@@ -59,9 +65,9 @@ int get_tipo_planta() const {
         return OTRO;
     }
 
-void mostrarInfo() const;
-bool operator<(const Especie& origen) const;
-bool operator==(const Especie& origen) const;
+    void mostrarInfo() const;
+    bool operator<(const Especie& origen) const;
+    bool operator==(const Especie& origen) const;
 };
 
 #endif

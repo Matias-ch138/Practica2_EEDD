@@ -1,13 +1,19 @@
+#ifndef PARQUE_H
+#define PARQUE_H
+
 #include <iostream>
+#include <string>
 #include "Especie.h"
+#include "VDinamico.h"
 using namespace std;
-class Parque{
-    private:
+
+
+class Parque {
+private:
     int cod_parque;
     string nbre_parque;
     VDinamico<Especie*> contains_;
-
-    public:
+public:
     Parque();
     Parque(int cod, string nombre);
     ~Parque();
@@ -19,8 +25,11 @@ class Parque{
     void set_nbre_parque(string nombre);
 
     VDinamico<Especie> get_especies() const;
-    
+    const VDinamico<Especie*>& get_contains() const;
+
     void insertarEspecie(Especie &esp);
     bool existeNbreCom(string ncomun);
     bool existenNbreCie(string ncient);
 };
+
+#endif
