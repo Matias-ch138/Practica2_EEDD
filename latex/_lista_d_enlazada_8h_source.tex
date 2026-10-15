@@ -1,0 +1,168 @@
+\doxysection{Lista\+DEnlazada.\+h}
+\hypertarget{_lista_d_enlazada_8h_source}{}\label{_lista_d_enlazada_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ LISTA\_D\_ENLAZADA\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ LISTA\_D\_ENLAZADA\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <stdexcept>}}
+\DoxyCodeLine{00006\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}Nodo.h"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}Iterador.h"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_lista_d_enlazada_af995b60f12d5ba10616a9d75f4e4c730}{ListaDEnlazada}}\ \{}
+\DoxyCodeLine{00012\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00013\ \ \ \ \ \doxymbox{\hyperlink{class_nodo}{Nodo<T>}}*\ cabecera\_;}
+\DoxyCodeLine{00014\ \ \ \ \ \doxymbox{\hyperlink{class_nodo}{Nodo<T>}}*\ cola\_;}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ tam\_;}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00022\ \ \ \ \ \doxymbox{\hyperlink{class_lista_d_enlazada_af995b60f12d5ba10616a9d75f4e4c730}{ListaDEnlazada}}()\ :\ cabecera\_(0),\ cola\_(0),\ tam\_(0)\ \{\}}
+\DoxyCodeLine{00028\ \ \ \ \ \doxymbox{\hyperlink{class_lista_d_enlazada_af6e66d67704be383c656c83f1bf7f450}{ListaDEnlazada}}(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_lista_d_enlazada_af995b60f12d5ba10616a9d75f4e4c730}{ListaDEnlazada}}\&\ origen)\ :\ cabecera\_(0),\ cola\_(0),\ tam\_(0)\ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_nodo}{Nodo<T>}}*\ actual\ =\ origen.cabecera\_;}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (actual\ !=\ 0)\ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_lista_d_enlazada_a9d84ff976626852495444507925e15c9}{insertaFin}}(actual-\/>dato\_);}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ actual\ =\ actual-\/>sig\_;}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00034\ \ \ \ \ \}}
+\DoxyCodeLine{00041\ \ \ \ \ \doxymbox{\hyperlink{class_lista_d_enlazada_af995b60f12d5ba10616a9d75f4e4c730}{ListaDEnlazada}}\&\ \doxymbox{\hyperlink{class_lista_d_enlazada_aec36ab31fe3f3b39371a0f72ce7e7902}{operator=}}(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_lista_d_enlazada_af995b60f12d5ba10616a9d75f4e4c730}{ListaDEnlazada}}\&\ origen)\ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{this}\ !=\ \&origen)\ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (cabecera\_\ !=\ 0)\ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_lista_d_enlazada_a6ea45e7901f460689b8fa3c7a51bee74}{borraInicio}}();}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_nodo}{Nodo<T>}}*\ actual\ =\ origen.cabecera\_;}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (actual\ !=\ 0)\ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_lista_d_enlazada_a9d84ff976626852495444507925e15c9}{insertaFin}}(actual-\/>dato\_);}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ actual\ =\ actual-\/>sig\_;}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00053\ \ \ \ \ \}}
+\DoxyCodeLine{00060\ \ \ \ \ T\&\ \doxymbox{\hyperlink{class_lista_d_enlazada_af8d6ae5d40b2cb1e0d5ddb4f8ac47bdf}{inicio}}()\ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (cabecera\_\ ==\ 0)\ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ out\_of\_range(\textcolor{stringliteral}{"{}[ListaDEnlazada::inicio]:\ La\ lista\ esta\ vacia."{}});}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ cabecera\_-\/>dato\_;}
+\DoxyCodeLine{00065\ \ \ \ \ \}}
+\DoxyCodeLine{00072\ \ \ \ \ T\&\ \doxymbox{\hyperlink{class_lista_d_enlazada_a1220f3bb6f55389c2808f0c079f4a3c6}{Fin}}()\ \{}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (cola\_\ ==\ 0)\ \{}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ out\_of\_range(\textcolor{stringliteral}{"{}[ListaDEnlazada::Fin]:\ La\ lista\ esta\ vacia."{}});}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ cola\_-\/>dato\_;}
+\DoxyCodeLine{00077\ \ \ \ \ \}}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ T\&\ \textcolor{keyword}{final}()\ \{\ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{class_lista_d_enlazada_a1220f3bb6f55389c2808f0c079f4a3c6}{Fin}}();\ \}}
+\DoxyCodeLine{00085\ \ \ \ \ \doxymbox{\hyperlink{class_iterador}{Iterador<T>}}\ \doxymbox{\hyperlink{class_lista_d_enlazada_a5e282b8b78fcfd33358375bdf62cb2f2}{iterador}}()\ \{\ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{class_iterador}{Iterador<T>}}(cabecera\_);\ \}}
+\DoxyCodeLine{00091\ \ \ \ \ \doxymbox{\hyperlink{class_iterador}{Iterador<T>}}\ \doxymbox{\hyperlink{class_lista_d_enlazada_aa1df7a3e896358ac25c6c3e72368cac6}{iteradorInicio}}()\ \{\ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{class_iterador}{Iterador<T>}}(cabecera\_);\ \}}
+\DoxyCodeLine{00097\ \ \ \ \ \doxymbox{\hyperlink{class_iterador}{Iterador<T>}}\ \doxymbox{\hyperlink{class_lista_d_enlazada_a1db2bdb66c602f8ae6eada47afbb72e3}{iteradorFinal}}()\ \{\ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{class_iterador}{Iterador<T>}}(cola\_);\ \}}
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_lista_d_enlazada_a9d84ff976626852495444507925e15c9}{insertaFin}}(\textcolor{keyword}{const}\ T\&\ dato)\ \{}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_nodo}{Nodo<T>}}*\ nuevo\ =\ \textcolor{keyword}{new}\ \doxymbox{\hyperlink{class_nodo}{Nodo<T>}}(dato,\ cola\_,\ 0);}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (cabecera\_\ ==\ 0)\ \{}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ cabecera\_\ =\ nuevo;}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (cola\_\ !=\ 0)\ \{}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ cola\_-\/>sig\_\ =\ nuevo;}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ cola\_\ =\ nuevo;}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ tam\_++;}
+\DoxyCodeLine{00113\ \ \ \ \ \}}
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_lista_d_enlazada_a8014f8de54ad185ee040538184af21cd}{inserta}}(\doxymbox{\hyperlink{class_iterador}{Iterador<T>}}\&\ i,\ \textcolor{keyword}{const}\ T\&\ dato)\ \{}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i.nodo\_\ ==\ 0)\ \{}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_lista_d_enlazada_a9d84ff976626852495444507925e15c9}{insertaFin}}(dato);}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i.nodo\_\ ==\ cabecera\_)\ \{}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_lista_d_enlazada_ab9e07de519992495b5d06390d7760aff}{insertaInicio}}(dato);}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_nodo}{Nodo<T>}}*\ nuevo\ =\ \textcolor{keyword}{new}\ \doxymbox{\hyperlink{class_nodo}{Nodo<T>}}(dato,\ i.nodo\_-\/>ant\_,\ i.nodo\_);}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ i.nodo\_-\/>ant\_-\/>sig\_\ =\ nuevo;}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ i.nodo\_-\/>ant\_\ =\ nuevo;}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ tam\_++;}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00133\ \ \ \ \ \}}
+\DoxyCodeLine{00139\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_lista_d_enlazada_ab9e07de519992495b5d06390d7760aff}{insertaInicio}}(\textcolor{keyword}{const}\ T\&\ dato)\ \{}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_nodo}{Nodo<T>}}*\ nuevo\ =\ \textcolor{keyword}{new}\ \doxymbox{\hyperlink{class_nodo}{Nodo<T>}}(dato,\ 0,\ cabecera\_);}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (cola\_\ ==\ 0)\ \{}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ cola\_\ =\ nuevo;}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (cabecera\_\ !=\ 0)\ \{}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ cabecera\_-\/>ant\_\ =\ nuevo;}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ cabecera\_\ =\ nuevo;}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ tam\_++;}
+\DoxyCodeLine{00149\ \ \ \ \ \}}
+\DoxyCodeLine{00154\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_lista_d_enlazada_a6ea45e7901f460689b8fa3c7a51bee74}{borraInicio}}()\ \{}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (cabecera\_\ ==\ 0)\ \{}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ out\_of\_range(\textcolor{stringliteral}{"{}[ListaDEnlazada::borraInicio]:\ La\ lista\ esta\ vacia."{}});}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_nodo}{Nodo<T>}}*\ borrado\ =\ cabecera\_;}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ cabecera\_\ =\ cabecera\_-\/>sig\_;}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ borrado;}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (cabecera\_\ !=\ 0)\ \{}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ cabecera\_-\/>ant\_\ =\ 0;}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ cola\_\ =\ 0;}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ tam\_-\/-\/;}
+\DoxyCodeLine{00169\ \ \ \ \ \}}
+\DoxyCodeLine{00174\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_lista_d_enlazada_aabd50a06785602ac207b0d2ac3d2b976}{borraFinal}}()\ \{}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (cola\_\ ==\ 0)\ \{}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ out\_of\_range(\textcolor{stringliteral}{"{}[ListaDEnlazada::borraFinal]:\ La\ lista\ esta\ vacia."{}});}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00178\ }
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_nodo}{Nodo<T>}}*\ borrado\ =\ cola\_;}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ cola\_\ =\ cola\_-\/>ant\_;}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ borrado;}
+\DoxyCodeLine{00182\ }
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (cola\_\ !=\ 0)\ \{}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \ \ \ \ cola\_-\/>sig\_\ =\ 0;}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ cabecera\_\ =\ 0;}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ tam\_-\/-\/;}
+\DoxyCodeLine{00189\ \ \ \ \ \}}
+\DoxyCodeLine{00196\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_lista_d_enlazada_a75f449f67ecec7e70feb1d110d0b22e0}{borra}}(\doxymbox{\hyperlink{class_iterador}{Iterador<T>}}\&\ i)\ \{}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i.nodo\_\ ==\ 0)\ \{}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ out\_of\_range(\textcolor{stringliteral}{"{}[ListaDEnlazada::borra]:\ El\ iterador\ esta\ al\ final."{}});}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_nodo}{Nodo<T>}}*\ siguiente\ =\ i.nodo\_-\/>sig\_;}
+\DoxyCodeLine{00201\ }
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i.nodo\_\ ==\ cabecera\_)\ \{}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_lista_d_enlazada_a6ea45e7901f460689b8fa3c7a51bee74}{borraInicio}}();}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (i.nodo\_\ ==\ cola\_)\ \{}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_lista_d_enlazada_aabd50a06785602ac207b0d2ac3d2b976}{borraFinal}}();}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_nodo}{Nodo<T>}}*\ borrado\ =\ i.nodo\_;}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \ \ \ \ borrado-\/>ant\_-\/>sig\_\ =\ borrado-\/>sig\_;}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \ \ \ \ borrado-\/>sig\_-\/>ant\_\ =\ borrado-\/>ant\_;}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ borrado;}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \ \ \ \ tam\_-\/-\/;}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ i.nodo\_\ =\ siguiente;}
+\DoxyCodeLine{00214\ \ \ \ \ \}}
+\DoxyCodeLine{00220\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{class_lista_d_enlazada_a65e80f02e1448218648183c192aad0ba}{tam}}()\ \{\ \textcolor{keywordflow}{return}\ tam\_;\ \}}
+\DoxyCodeLine{00227\ \ \ \ \ \doxymbox{\hyperlink{class_lista_d_enlazada_af995b60f12d5ba10616a9d75f4e4c730}{ListaDEnlazada<T>}}\ \doxymbox{\hyperlink{class_lista_d_enlazada_abd59be40870ca9ffff321066658bd38e}{concatena}}(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_lista_d_enlazada_af995b60f12d5ba10616a9d75f4e4c730}{ListaDEnlazada}}\&\ l)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_lista_d_enlazada_af995b60f12d5ba10616a9d75f4e4c730}{ListaDEnlazada<T>}}\ resultado(*\textcolor{keyword}{this});}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_nodo}{Nodo<T>}}*\ actual\ =\ l.cabecera\_;}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (actual\ !=\ 0)\ \{}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \ \ \ \ resultado.\doxymbox{\hyperlink{class_lista_d_enlazada_a9d84ff976626852495444507925e15c9}{insertaFin}}(actual-\/>dato\_);}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \ \ \ \ actual\ =\ actual-\/>sig\_;}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ resultado;}
+\DoxyCodeLine{00235\ \ \ \ \ \}}
+\DoxyCodeLine{00242\ \ \ \ \ \doxymbox{\hyperlink{class_lista_d_enlazada_af995b60f12d5ba10616a9d75f4e4c730}{ListaDEnlazada<T>}}\ \doxymbox{\hyperlink{class_lista_d_enlazada_ad83ce9796fbf79b8d1699aa5ea72e752}{operator+}}(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_lista_d_enlazada_af995b60f12d5ba10616a9d75f4e4c730}{ListaDEnlazada}}\&\ l)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{class_lista_d_enlazada_abd59be40870ca9ffff321066658bd38e}{concatena}}(l);}
+\DoxyCodeLine{00244\ \ \ \ \ \}}
+\DoxyCodeLine{00249\ \ \ \ \ \doxymbox{\hyperlink{class_lista_d_enlazada_a8997b9dc17fe7da671714067e0a3d27a}{\string~ListaDEnlazada}}()\ \{}
+\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (cabecera\_\ !=\ 0)\ \{}
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_lista_d_enlazada_a6ea45e7901f460689b8fa3c7a51bee74}{borraInicio}}();}
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00253\ \ \ \ \ \}}
+\DoxyCodeLine{00254\ \};}
+\DoxyCodeLine{00255\ }
+\DoxyCodeLine{00256\ \textcolor{preprocessor}{\#endif\ }}
+
+\end{DoxyCode}

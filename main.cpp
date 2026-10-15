@@ -1,3 +1,14 @@
+/**
+ * @file main.cpp
+ * @author Matías Camacho Hoyo mch00039@ujaen.es 
+ * @author Jose Rivas Ceacero jrc00091@red.ujaen.es
+ * @brief 
+ * @version 0.1
+ * @date 2026-10-15
+ * 
+ * @copyright Copyright (c) 2026
+ * 
+ */
 #include <iostream>
 
 #include "ControlParques.h"

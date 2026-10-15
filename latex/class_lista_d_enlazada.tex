@@ -1,0 +1,332 @@
+\doxysection{Lista\+DEnlazada\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{class_lista_d_enlazada}{}\label{class_lista_d_enlazada}\index{ListaDEnlazada$<$ T $>$@{ListaDEnlazada$<$ T $>$}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_lista_d_enlazada_af995b60f12d5ba10616a9d75f4e4c730}\label{class_lista_d_enlazada_af995b60f12d5ba10616a9d75f4e4c730} 
+{\bfseries Lista\+DEnlazada} ()
+\begin{DoxyCompactList}\small\item\em Constructor por defecto de \doxylink{class_lista_d_enlazada}{Lista\+DEnlazada}. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{class_lista_d_enlazada_af6e66d67704be383c656c83f1bf7f450}{Lista\+DEnlazada}} (const \doxymbox{\hyperlink{class_lista_d_enlazada}{Lista\+DEnlazada}} \&origen)
+\begin{DoxyCompactList}\small\item\em Construct de copia de \doxylink{class_lista_d_enlazada}{Lista\+DEnlazada}. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{class_lista_d_enlazada}{Lista\+DEnlazada}} \& \doxymbox{\hyperlink{class_lista_d_enlazada_aec36ab31fe3f3b39371a0f72ce7e7902}{operator=}} (const \doxymbox{\hyperlink{class_lista_d_enlazada}{Lista\+DEnlazada}} \&origen)
+\begin{DoxyCompactList}\small\item\em operador de asignación de \doxylink{class_lista_d_enlazada}{Lista\+DEnlazada} \end{DoxyCompactList}\item 
+T \& \doxymbox{\hyperlink{class_lista_d_enlazada_af8d6ae5d40b2cb1e0d5ddb4f8ac47bdf}{inicio}} ()
+\begin{DoxyCompactList}\small\item\em obtener dato de la cabecera de la lista \end{DoxyCompactList}\item 
+T \& \doxymbox{\hyperlink{class_lista_d_enlazada_a1220f3bb6f55389c2808f0c079f4a3c6}{Fin}} ()
+\begin{DoxyCompactList}\small\item\em obtener dato de la cola de la lista \end{DoxyCompactList}\item 
+\Hypertarget{class_lista_d_enlazada_ad05af1afa1fe10168dddd54262f0161b}\label{class_lista_d_enlazada_ad05af1afa1fe10168dddd54262f0161b} 
+T \& {\bfseries final} ()
+\item 
+\doxymbox{\hyperlink{class_iterador}{Iterador}}$<$ T $>$ \doxymbox{\hyperlink{class_lista_d_enlazada_a5e282b8b78fcfd33358375bdf62cb2f2}{iterador}} ()
+\begin{DoxyCompactList}\small\item\em constructor de iterador para la lista apuntando a la cabecera \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{class_iterador}{Iterador}}$<$ T $>$ \doxymbox{\hyperlink{class_lista_d_enlazada_aa1df7a3e896358ac25c6c3e72368cac6}{iterador\+Inicio}} ()
+\begin{DoxyCompactList}\small\item\em constructor de iterador para la lista apuntando a la cabecera \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{class_iterador}{Iterador}}$<$ T $>$ \doxymbox{\hyperlink{class_lista_d_enlazada_a1db2bdb66c602f8ae6eada47afbb72e3}{iterador\+Final}} ()
+\begin{DoxyCompactList}\small\item\em constructor de iterador para la lista apuntando a la cola \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_lista_d_enlazada_a9d84ff976626852495444507925e15c9}{inserta\+Fin}} (const T \&dato)
+\begin{DoxyCompactList}\small\item\em insertar un dato al final de la lista \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_lista_d_enlazada_a8014f8de54ad185ee040538184af21cd}{inserta}} (\doxymbox{\hyperlink{class_iterador}{Iterador}}$<$ T $>$ \&i, const T \&dato)
+\begin{DoxyCompactList}\small\item\em insertar un dato según la posición de un iterador en la lista \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_lista_d_enlazada_ab9e07de519992495b5d06390d7760aff}{inserta\+Inicio}} (const T \&dato)
+\begin{DoxyCompactList}\small\item\em insertar un dato al inicio de la lista \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_lista_d_enlazada_a6ea45e7901f460689b8fa3c7a51bee74}{borra\+Inicio}} ()
+\begin{DoxyCompactList}\small\item\em borrar el dato del inicio \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_lista_d_enlazada_aabd50a06785602ac207b0d2ac3d2b976}{borra\+Final}} ()
+\begin{DoxyCompactList}\small\item\em borrar el dato del final de la lista \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_lista_d_enlazada_a75f449f67ecec7e70feb1d110d0b22e0}{borra}} (\doxymbox{\hyperlink{class_iterador}{Iterador}}$<$ T $>$ \&i)
+\begin{DoxyCompactList}\small\item\em borrar un dato de la lista según la posición de un iterador en ella \end{DoxyCompactList}\item 
+unsigned int \doxymbox{\hyperlink{class_lista_d_enlazada_a65e80f02e1448218648183c192aad0ba}{tam}} ()
+\begin{DoxyCompactList}\small\item\em devuelve el tamaño de la lista \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{class_lista_d_enlazada}{Lista\+DEnlazada}}$<$ T $>$ \doxymbox{\hyperlink{class_lista_d_enlazada_abd59be40870ca9ffff321066658bd38e}{concatena}} (const \doxymbox{\hyperlink{class_lista_d_enlazada}{Lista\+DEnlazada}} \&l) const
+\begin{DoxyCompactList}\small\item\em concatena dos listas \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{class_lista_d_enlazada}{Lista\+DEnlazada}}$<$ T $>$ \doxymbox{\hyperlink{class_lista_d_enlazada_ad83ce9796fbf79b8d1699aa5ea72e752}{operator+}} (const \doxymbox{\hyperlink{class_lista_d_enlazada}{Lista\+DEnlazada}} \&l) const
+\begin{DoxyCompactList}\small\item\em operador de concatenación \end{DoxyCompactList}\item 
+\Hypertarget{class_lista_d_enlazada_a8997b9dc17fe7da671714067e0a3d27a}\label{class_lista_d_enlazada_a8997b9dc17fe7da671714067e0a3d27a} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Lista\+DEnlazada} ()
+\begin{DoxyCompactList}\small\item\em destructor de la lista \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{class_lista_d_enlazada_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_lista_d_enlazada_af6e66d67704be383c656c83f1bf7f450}\index{ListaDEnlazada$<$ T $>$@{ListaDEnlazada$<$ T $>$}!ListaDEnlazada@{ListaDEnlazada}}
+\index{ListaDEnlazada@{ListaDEnlazada}!ListaDEnlazada$<$ T $>$@{ListaDEnlazada$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{ListaDEnlazada()}{ListaDEnlazada()}}
+{\footnotesize\ttfamily \label{class_lista_d_enlazada_af6e66d67704be383c656c83f1bf7f450} 
+template$<$typename T$>$ \\
+\doxymbox{\hyperlink{class_lista_d_enlazada}{Lista\+DEnlazada}}$<$ T $>$::\+\+Lista\+DEnlazada (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{class_lista_d_enlazada}{Lista\+DEnlazada}}$<$ T $>$ \&}]{origen}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct de copia de \doxylink{class_lista_d_enlazada}{Lista\+DEnlazada}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em origen} & Objeto a copiar \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_lista_d_enlazada_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_lista_d_enlazada_a75f449f67ecec7e70feb1d110d0b22e0}\index{ListaDEnlazada$<$ T $>$@{ListaDEnlazada$<$ T $>$}!borra@{borra}}
+\index{borra@{borra}!ListaDEnlazada$<$ T $>$@{ListaDEnlazada$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{borra()}{borra()}}
+{\footnotesize\ttfamily \label{class_lista_d_enlazada_a75f449f67ecec7e70feb1d110d0b22e0} 
+template$<$typename T$>$ \\
+void \doxymbox{\hyperlink{class_lista_d_enlazada}{Lista\+DEnlazada}}$<$ T $>$::\+borra (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_iterador}{Iterador}}$<$ T $>$ \&}]{i}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+borrar un dato de la lista según la posición de un iterador en ella 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & iterador apuntando a una posición de la lista \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em out\+\_\+of\+\_\+range} & si la lista esta vacia \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{class_lista_d_enlazada_aabd50a06785602ac207b0d2ac3d2b976}\index{ListaDEnlazada$<$ T $>$@{ListaDEnlazada$<$ T $>$}!borraFinal@{borraFinal}}
+\index{borraFinal@{borraFinal}!ListaDEnlazada$<$ T $>$@{ListaDEnlazada$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{borraFinal()}{borraFinal()}}
+{\footnotesize\ttfamily \label{class_lista_d_enlazada_aabd50a06785602ac207b0d2ac3d2b976} 
+template$<$typename T$>$ \\
+void \doxymbox{\hyperlink{class_lista_d_enlazada}{Lista\+DEnlazada}}$<$ T $>$::\+borra\+Final (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+borrar el dato del final de la lista 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em out\+\_\+of\+\_\+range} & si la lista esta vacia \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{class_lista_d_enlazada_a6ea45e7901f460689b8fa3c7a51bee74}\index{ListaDEnlazada$<$ T $>$@{ListaDEnlazada$<$ T $>$}!borraInicio@{borraInicio}}
+\index{borraInicio@{borraInicio}!ListaDEnlazada$<$ T $>$@{ListaDEnlazada$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{borraInicio()}{borraInicio()}}
+{\footnotesize\ttfamily \label{class_lista_d_enlazada_a6ea45e7901f460689b8fa3c7a51bee74} 
+template$<$typename T$>$ \\
+void \doxymbox{\hyperlink{class_lista_d_enlazada}{Lista\+DEnlazada}}$<$ T $>$::\+borra\+Inicio (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+borrar el dato del inicio 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em out\+\_\+of\+\_\+range} & si la lista esta vacia \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{class_lista_d_enlazada_abd59be40870ca9ffff321066658bd38e}\index{ListaDEnlazada$<$ T $>$@{ListaDEnlazada$<$ T $>$}!concatena@{concatena}}
+\index{concatena@{concatena}!ListaDEnlazada$<$ T $>$@{ListaDEnlazada$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{concatena()}{concatena()}}
+{\footnotesize\ttfamily \label{class_lista_d_enlazada_abd59be40870ca9ffff321066658bd38e} 
+template$<$typename T$>$ \\
+\doxymbox{\hyperlink{class_lista_d_enlazada}{Lista\+DEnlazada}}$<$ T $>$ \doxymbox{\hyperlink{class_lista_d_enlazada}{Lista\+DEnlazada}}$<$ T $>$::\+concatena (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{class_lista_d_enlazada}{Lista\+DEnlazada}}$<$ T $>$ \&}]{l}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+concatena dos listas 
+
+
+\begin{DoxyParams}{Parameters}
+{\em l} & lista que vamos a concatenar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{class_lista_d_enlazada}{Lista\+DEnlazada$<$\+T$>$} lista concatenada 
+\end{DoxyReturn}
+\Hypertarget{class_lista_d_enlazada_a1220f3bb6f55389c2808f0c079f4a3c6}\index{ListaDEnlazada$<$ T $>$@{ListaDEnlazada$<$ T $>$}!Fin@{Fin}}
+\index{Fin@{Fin}!ListaDEnlazada$<$ T $>$@{ListaDEnlazada$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Fin()}{Fin()}}
+{\footnotesize\ttfamily \label{class_lista_d_enlazada_a1220f3bb6f55389c2808f0c079f4a3c6} 
+template$<$typename T$>$ \\
+T \& \doxymbox{\hyperlink{class_lista_d_enlazada}{Lista\+DEnlazada}}$<$ T $>$::\+\+Fin (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+obtener dato de la cola de la lista 
+
+\begin{DoxyReturn}{Returns}
+T\& dato de la cola de la lista 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em out\+\_\+of\+\_\+range} & si la lista esta vacia \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{class_lista_d_enlazada_af8d6ae5d40b2cb1e0d5ddb4f8ac47bdf}\index{ListaDEnlazada$<$ T $>$@{ListaDEnlazada$<$ T $>$}!inicio@{inicio}}
+\index{inicio@{inicio}!ListaDEnlazada$<$ T $>$@{ListaDEnlazada$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{inicio()}{inicio()}}
+{\footnotesize\ttfamily \label{class_lista_d_enlazada_af8d6ae5d40b2cb1e0d5ddb4f8ac47bdf} 
+template$<$typename T$>$ \\
+T \& \doxymbox{\hyperlink{class_lista_d_enlazada}{Lista\+DEnlazada}}$<$ T $>$::\+inicio (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+obtener dato de la cabecera de la lista 
+
+\begin{DoxyReturn}{Returns}
+T\& el dato que hay en la cabecera 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em out\+\_\+of\+\_\+range} & si la lista esta vacia \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{class_lista_d_enlazada_a8014f8de54ad185ee040538184af21cd}\index{ListaDEnlazada$<$ T $>$@{ListaDEnlazada$<$ T $>$}!inserta@{inserta}}
+\index{inserta@{inserta}!ListaDEnlazada$<$ T $>$@{ListaDEnlazada$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{inserta()}{inserta()}}
+{\footnotesize\ttfamily \label{class_lista_d_enlazada_a8014f8de54ad185ee040538184af21cd} 
+template$<$typename T$>$ \\
+void \doxymbox{\hyperlink{class_lista_d_enlazada}{Lista\+DEnlazada}}$<$ T $>$::\+inserta (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_iterador}{Iterador}}$<$ T $>$ \&}]{i}{, }\item[{const T \&}]{dato}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+insertar un dato según la posición de un iterador en la lista 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & el iterador apuntando a una posición de la lista \\
+\hline
+{\em dato} & que queremos almacenar en esa posición concreta de la lista \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_lista_d_enlazada_a9d84ff976626852495444507925e15c9}\index{ListaDEnlazada$<$ T $>$@{ListaDEnlazada$<$ T $>$}!insertaFin@{insertaFin}}
+\index{insertaFin@{insertaFin}!ListaDEnlazada$<$ T $>$@{ListaDEnlazada$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{insertaFin()}{insertaFin()}}
+{\footnotesize\ttfamily \label{class_lista_d_enlazada_a9d84ff976626852495444507925e15c9} 
+template$<$typename T$>$ \\
+void \doxymbox{\hyperlink{class_lista_d_enlazada}{Lista\+DEnlazada}}$<$ T $>$::\+inserta\+Fin (\begin{DoxyParamCaption}\item[{const T \&}]{dato}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+insertar un dato al final de la lista 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dato} & que insertamos al final de la lista \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_lista_d_enlazada_ab9e07de519992495b5d06390d7760aff}\index{ListaDEnlazada$<$ T $>$@{ListaDEnlazada$<$ T $>$}!insertaInicio@{insertaInicio}}
+\index{insertaInicio@{insertaInicio}!ListaDEnlazada$<$ T $>$@{ListaDEnlazada$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{insertaInicio()}{insertaInicio()}}
+{\footnotesize\ttfamily \label{class_lista_d_enlazada_ab9e07de519992495b5d06390d7760aff} 
+template$<$typename T$>$ \\
+void \doxymbox{\hyperlink{class_lista_d_enlazada}{Lista\+DEnlazada}}$<$ T $>$::\+inserta\+Inicio (\begin{DoxyParamCaption}\item[{const T \&}]{dato}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+insertar un dato al inicio de la lista 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dato} & que queremos almacenar al inicio de la lista \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_lista_d_enlazada_a5e282b8b78fcfd33358375bdf62cb2f2}\index{ListaDEnlazada$<$ T $>$@{ListaDEnlazada$<$ T $>$}!iterador@{iterador}}
+\index{iterador@{iterador}!ListaDEnlazada$<$ T $>$@{ListaDEnlazada$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{iterador()}{iterador()}}
+{\footnotesize\ttfamily \label{class_lista_d_enlazada_a5e282b8b78fcfd33358375bdf62cb2f2} 
+template$<$typename T$>$ \\
+\doxymbox{\hyperlink{class_iterador}{Iterador}}$<$ T $>$ \doxymbox{\hyperlink{class_lista_d_enlazada}{Lista\+DEnlazada}}$<$ T $>$::\+iterador (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+constructor de iterador para la lista apuntando a la cabecera 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{class_iterador}{Iterador$<$\+T$>$} el iterador apuntando a la cabecera 
+\end{DoxyReturn}
+\Hypertarget{class_lista_d_enlazada_a1db2bdb66c602f8ae6eada47afbb72e3}\index{ListaDEnlazada$<$ T $>$@{ListaDEnlazada$<$ T $>$}!iteradorFinal@{iteradorFinal}}
+\index{iteradorFinal@{iteradorFinal}!ListaDEnlazada$<$ T $>$@{ListaDEnlazada$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{iteradorFinal()}{iteradorFinal()}}
+{\footnotesize\ttfamily \label{class_lista_d_enlazada_a1db2bdb66c602f8ae6eada47afbb72e3} 
+template$<$typename T$>$ \\
+\doxymbox{\hyperlink{class_iterador}{Iterador}}$<$ T $>$ \doxymbox{\hyperlink{class_lista_d_enlazada}{Lista\+DEnlazada}}$<$ T $>$::\+iterador\+Final (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+constructor de iterador para la lista apuntando a la cola 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{class_iterador}{Iterador$<$\+T$>$} el iterador apuntando a la cola 
+\end{DoxyReturn}
+\Hypertarget{class_lista_d_enlazada_aa1df7a3e896358ac25c6c3e72368cac6}\index{ListaDEnlazada$<$ T $>$@{ListaDEnlazada$<$ T $>$}!iteradorInicio@{iteradorInicio}}
+\index{iteradorInicio@{iteradorInicio}!ListaDEnlazada$<$ T $>$@{ListaDEnlazada$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{iteradorInicio()}{iteradorInicio()}}
+{\footnotesize\ttfamily \label{class_lista_d_enlazada_aa1df7a3e896358ac25c6c3e72368cac6} 
+template$<$typename T$>$ \\
+\doxymbox{\hyperlink{class_iterador}{Iterador}}$<$ T $>$ \doxymbox{\hyperlink{class_lista_d_enlazada}{Lista\+DEnlazada}}$<$ T $>$::\+iterador\+Inicio (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+constructor de iterador para la lista apuntando a la cabecera 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{class_iterador}{Iterador$<$\+T$>$} el iterador apuntando a la cabecera 
+\end{DoxyReturn}
+\Hypertarget{class_lista_d_enlazada_ad83ce9796fbf79b8d1699aa5ea72e752}\index{ListaDEnlazada$<$ T $>$@{ListaDEnlazada$<$ T $>$}!operator+@{operator+}}
+\index{operator+@{operator+}!ListaDEnlazada$<$ T $>$@{ListaDEnlazada$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}}
+{\footnotesize\ttfamily \label{class_lista_d_enlazada_ad83ce9796fbf79b8d1699aa5ea72e752} 
+template$<$typename T$>$ \\
+\doxymbox{\hyperlink{class_lista_d_enlazada}{Lista\+DEnlazada}}$<$ T $>$ \doxymbox{\hyperlink{class_lista_d_enlazada}{Lista\+DEnlazada}}$<$ T $>$::\+operator+ (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{class_lista_d_enlazada}{Lista\+DEnlazada}}$<$ T $>$ \&}]{l}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+operador de concatenación 
+
+
+\begin{DoxyParams}{Parameters}
+{\em l} & lista que vamos a concatenar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{class_lista_d_enlazada}{Lista\+DEnlazada$<$\+T$>$} lista concatenada 
+\end{DoxyReturn}
+\Hypertarget{class_lista_d_enlazada_aec36ab31fe3f3b39371a0f72ce7e7902}\index{ListaDEnlazada$<$ T $>$@{ListaDEnlazada$<$ T $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!ListaDEnlazada$<$ T $>$@{ListaDEnlazada$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \label{class_lista_d_enlazada_aec36ab31fe3f3b39371a0f72ce7e7902} 
+template$<$typename T$>$ \\
+\doxymbox{\hyperlink{class_lista_d_enlazada}{Lista\+DEnlazada}} \& \doxymbox{\hyperlink{class_lista_d_enlazada}{Lista\+DEnlazada}}$<$ T $>$::\+operator= (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{class_lista_d_enlazada}{Lista\+DEnlazada}}$<$ T $>$ \&}]{origen}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+operador de asignación de \doxylink{class_lista_d_enlazada}{Lista\+DEnlazada} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em origen} & objeto que se va a asignar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{class_lista_d_enlazada}{Lista\+DEnlazada}\& objeto asignado 
+\end{DoxyReturn}
+\Hypertarget{class_lista_d_enlazada_a65e80f02e1448218648183c192aad0ba}\index{ListaDEnlazada$<$ T $>$@{ListaDEnlazada$<$ T $>$}!tam@{tam}}
+\index{tam@{tam}!ListaDEnlazada$<$ T $>$@{ListaDEnlazada$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{tam()}{tam()}}
+{\footnotesize\ttfamily \label{class_lista_d_enlazada_a65e80f02e1448218648183c192aad0ba} 
+template$<$typename T$>$ \\
+unsigned int \doxymbox{\hyperlink{class_lista_d_enlazada}{Lista\+DEnlazada}}$<$ T $>$::\+tam (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+devuelve el tamaño de la lista 
+
+\begin{DoxyReturn}{Returns}
+unsigned int el tamño de la lista 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}
+\item 
+Iterador.\+h\item 
+Lista\+DEnlazada.\+h\end{DoxyCompactItemize}

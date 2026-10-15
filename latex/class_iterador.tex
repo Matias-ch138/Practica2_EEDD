@@ -1,0 +1,177 @@
+\doxysection{Iterador\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{class_iterador}{}\label{class_iterador}\index{Iterador$<$ T $>$@{Iterador$<$ T $>$}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_iterador_a95667696efab8089c63826a5fe3d23bc}\label{class_iterador_a95667696efab8089c63826a5fe3d23bc} 
+{\bfseries Iterador} ()
+\begin{DoxyCompactList}\small\item\em Constructor por defecto de un iterador. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{class_iterador_ab9539d5cae5911f94183dc3a5eb8661b}{Iterador}} (\doxymbox{\hyperlink{class_nodo}{Nodo}}$<$ T $>$ \texorpdfstring{$\ast$}{*}nodo)
+\begin{DoxyCompactList}\small\item\em Construct copia de un iterador. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{class_iterador_adefdc785232177e44459a65376a42bbc}{fin}} () const
+\begin{DoxyCompactList}\small\item\em ver si estamos en el último nodo de una estructura concreta \end{DoxyCompactList}\item 
+\Hypertarget{class_iterador_aa33f7fd6efd0d1ae75f0bbd22877e8d2}\label{class_iterador_aa33f7fd6efd0d1ae75f0bbd22877e8d2} 
+void {\bfseries avanza} ()
+\begin{DoxyCompactList}\small\item\em avanza un nodo \end{DoxyCompactList}\item 
+T \& \doxymbox{\hyperlink{class_iterador_a4574fa7cbc1bdff92afbffd51f8dd1ad}{getdato}} ()
+\begin{DoxyCompactList}\small\item\em obtiene el dato del nodo al que esta apuntando \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{class_iterador_ab96fa8bc7890d78610700ce338d12612}{hay\+Anterior}} () const
+\begin{DoxyCompactList}\small\item\em ver si tenemos un nodo anterior \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{class_iterador_ae8129958ab97fd31b33a1227bb24f9ae}{hay\+Siguiente}} () const
+\begin{DoxyCompactList}\small\item\em ver si tenemos un nodo siguiente \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_iterador_a4fa88fd53fce632d9eaaca504003e7c3}{anterior}} ()
+\begin{DoxyCompactList}\small\item\em apuntar al nodo anterior al actual \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_iterador_a3437fb728fcaacc2bd9e3685ebd2b784}{siguiente}} ()
+\begin{DoxyCompactList}\small\item\em apuntar al nodo siguiente al actual \end{DoxyCompactList}\item 
+T \& \doxymbox{\hyperlink{class_iterador_a847bc22055e6d52f7894411e4ac70383}{dato}} ()
+\begin{DoxyCompactList}\small\item\em devuelve el dato que hay en el nodo al que el iterador esta apuntando \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_iterador_a10913f7e621a0693dcee1af46a1abcf9}\label{class_iterador_a10913f7e621a0693dcee1af46a1abcf9} 
+{\footnotesize template$<$typename U$>$ }\\class {\bfseries Lista\+DEnlazada}
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{class_iterador_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_iterador_ab9539d5cae5911f94183dc3a5eb8661b}\index{Iterador$<$ T $>$@{Iterador$<$ T $>$}!Iterador@{Iterador}}
+\index{Iterador@{Iterador}!Iterador$<$ T $>$@{Iterador$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Iterador()}{Iterador()}}
+{\footnotesize\ttfamily \label{class_iterador_ab9539d5cae5911f94183dc3a5eb8661b} 
+template$<$typename T$>$ \\
+\doxymbox{\hyperlink{class_iterador}{Iterador}}$<$ T $>$::\+\+Iterador (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_nodo}{Nodo}}$<$ T $>$ \texorpdfstring{$\ast$}{*}}]{nodo}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct copia de un iterador. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nodo} & objeto a copiar \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_iterador_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_iterador_a4fa88fd53fce632d9eaaca504003e7c3}\index{Iterador$<$ T $>$@{Iterador$<$ T $>$}!anterior@{anterior}}
+\index{anterior@{anterior}!Iterador$<$ T $>$@{Iterador$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{anterior()}{anterior()}}
+{\footnotesize\ttfamily \label{class_iterador_a4fa88fd53fce632d9eaaca504003e7c3} 
+template$<$typename T$>$ \\
+void \doxymbox{\hyperlink{class_iterador}{Iterador}}$<$ T $>$::\+anterior (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+apuntar al nodo anterior al actual 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em out\+\_\+of\+\_\+range} & si no hay nodo anterior \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{class_iterador_a847bc22055e6d52f7894411e4ac70383}\index{Iterador$<$ T $>$@{Iterador$<$ T $>$}!dato@{dato}}
+\index{dato@{dato}!Iterador$<$ T $>$@{Iterador$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{dato()}{dato()}}
+{\footnotesize\ttfamily \label{class_iterador_a847bc22055e6d52f7894411e4ac70383} 
+template$<$typename T$>$ \\
+T \& \doxymbox{\hyperlink{class_iterador}{Iterador}}$<$ T $>$::\+dato (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+devuelve el dato que hay en el nodo al que el iterador esta apuntando 
+
+\begin{DoxyReturn}{Returns}
+T\& el dato que devuelve 
+\end{DoxyReturn}
+\Hypertarget{class_iterador_adefdc785232177e44459a65376a42bbc}\index{Iterador$<$ T $>$@{Iterador$<$ T $>$}!fin@{fin}}
+\index{fin@{fin}!Iterador$<$ T $>$@{Iterador$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{fin()}{fin()}}
+{\footnotesize\ttfamily \label{class_iterador_adefdc785232177e44459a65376a42bbc} 
+template$<$typename T$>$ \\
+bool \doxymbox{\hyperlink{class_iterador}{Iterador}}$<$ T $>$::\+fin (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+ver si estamos en el último nodo de una estructura concreta 
+
+\begin{DoxyReturn}{Returns}
+true si estamos en el ultimo nodo 
+
+false si no estamos en el ultimo nodo 
+\end{DoxyReturn}
+\Hypertarget{class_iterador_a4574fa7cbc1bdff92afbffd51f8dd1ad}\index{Iterador$<$ T $>$@{Iterador$<$ T $>$}!getdato@{getdato}}
+\index{getdato@{getdato}!Iterador$<$ T $>$@{Iterador$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getdato()}{getdato()}}
+{\footnotesize\ttfamily \label{class_iterador_a4574fa7cbc1bdff92afbffd51f8dd1ad} 
+template$<$typename T$>$ \\
+T \& \doxymbox{\hyperlink{class_iterador}{Iterador}}$<$ T $>$::\+getdato (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+obtiene el dato del nodo al que esta apuntando 
+
+\begin{DoxyReturn}{Returns}
+T\& el dato obtenido 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em out\+\_\+of\+\_\+range} & si el iterador no apunta a nada \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{class_iterador_ab96fa8bc7890d78610700ce338d12612}\index{Iterador$<$ T $>$@{Iterador$<$ T $>$}!hayAnterior@{hayAnterior}}
+\index{hayAnterior@{hayAnterior}!Iterador$<$ T $>$@{Iterador$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{hayAnterior()}{hayAnterior()}}
+{\footnotesize\ttfamily \label{class_iterador_ab96fa8bc7890d78610700ce338d12612} 
+template$<$typename T$>$ \\
+bool \doxymbox{\hyperlink{class_iterador}{Iterador}}$<$ T $>$::\+hay\+Anterior (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+ver si tenemos un nodo anterior 
+
+\begin{DoxyReturn}{Returns}
+true si si lo tenemos 
+
+false si no lo tenemos 
+\end{DoxyReturn}
+\Hypertarget{class_iterador_ae8129958ab97fd31b33a1227bb24f9ae}\index{Iterador$<$ T $>$@{Iterador$<$ T $>$}!haySiguiente@{haySiguiente}}
+\index{haySiguiente@{haySiguiente}!Iterador$<$ T $>$@{Iterador$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{haySiguiente()}{haySiguiente()}}
+{\footnotesize\ttfamily \label{class_iterador_ae8129958ab97fd31b33a1227bb24f9ae} 
+template$<$typename T$>$ \\
+bool \doxymbox{\hyperlink{class_iterador}{Iterador}}$<$ T $>$::\+hay\+Siguiente (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+ver si tenemos un nodo siguiente 
+
+\begin{DoxyReturn}{Returns}
+true si si lo tenemos 
+
+false si no lo tenemos 
+\end{DoxyReturn}
+\Hypertarget{class_iterador_a3437fb728fcaacc2bd9e3685ebd2b784}\index{Iterador$<$ T $>$@{Iterador$<$ T $>$}!siguiente@{siguiente}}
+\index{siguiente@{siguiente}!Iterador$<$ T $>$@{Iterador$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{siguiente()}{siguiente()}}
+{\footnotesize\ttfamily \label{class_iterador_a3437fb728fcaacc2bd9e3685ebd2b784} 
+template$<$typename T$>$ \\
+void \doxymbox{\hyperlink{class_iterador}{Iterador}}$<$ T $>$::\+siguiente (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+apuntar al nodo siguiente al actual 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em out\+\_\+of\+\_\+range} & si no hay elemento siguiente \\
+\hline
+\end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Iterador.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,39 @@
+\doxysection{Parque.\+h}
+\hypertarget{_parque_8h_source}{}\label{_parque_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ PARQUE\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ PARQUE\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}Especie.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}VDinamico.h"{}}}
+\DoxyCodeLine{00008\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_parque_a5396e3e5a2bc91c02151f561a0450c0f}{Parque}}\ \{}
+\DoxyCodeLine{00012\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordtype}{int}\ cod\_parque;}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{string}\ nbre\_parque;}
+\DoxyCodeLine{00015\ \ \ \ \ \doxymbox{\hyperlink{class_v_dinamico}{VDinamico<Especie*>}}\ contains\_;}
+\DoxyCodeLine{00016\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00017\ \ \ \ \ \doxymbox{\hyperlink{class_parque_a5396e3e5a2bc91c02151f561a0450c0f}{Parque}}();}
+\DoxyCodeLine{00018\ \ \ \ \ \doxymbox{\hyperlink{class_parque_a5396e3e5a2bc91c02151f561a0450c0f}{Parque}}(\textcolor{keywordtype}{int}\ cod,\ \textcolor{keywordtype}{string}\ nombre);}
+\DoxyCodeLine{00019\ \ \ \ \ \doxymbox{\hyperlink{class_parque_a6a5ec17e0d6160f6709071dc6269ab57}{\string~Parque}}();}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{class_parque_a22cd7b056df8f4b1eba519c0c6991ba9}{get\_cod\_parque}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_parque_aec129faed41072a3ebafe8e6cce21f99}{set\_cod\_parque}}(\textcolor{keywordtype}{int}\ cod);}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{string}\ \doxymbox{\hyperlink{class_parque_aae41492b161da8d4954598a27e619bfd}{get\_nbre\_parque}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_parque_a665761d2de3152cf6673771fe08b2986}{set\_nbre\_parque}}(\textcolor{keywordtype}{string}\ nombre);}
+\DoxyCodeLine{00026\ \ \ \ \ \doxymbox{\hyperlink{class_v_dinamico}{VDinamico<Especie>}}\ \doxymbox{\hyperlink{class_parque_a43c2c185ab3a3a8251128ee9b59437c1}{get\_especies}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_v_dinamico}{VDinamico<Especie*>}}\&\ \doxymbox{\hyperlink{class_parque_a1813f8925988ac69621b05af1c944c54}{get\_contains}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_parque_ac433a6918815bbf56cc2e3063b0629b1}{insertarEspecie}}(\doxymbox{\hyperlink{class_especie}{Especie}}\ \&esp);}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{class_parque_a6a931dd4193868cf157a02f8ac7fd922}{existeNbreCom}}(\textcolor{keywordtype}{string}\ ncomun);}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{class_parque_a98a318be52fe90b15dc750e30a318f23}{existeNbreCie}}(\textcolor{keywordtype}{string}\ ncient);}
+\DoxyCodeLine{00032\ \};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

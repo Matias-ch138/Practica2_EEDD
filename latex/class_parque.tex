@@ -1,0 +1,201 @@
+\doxysection{Parque Class Reference}
+\hypertarget{class_parque}{}\label{class_parque}\index{Parque@{Parque}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_parque_a5396e3e5a2bc91c02151f561a0450c0f}\label{class_parque_a5396e3e5a2bc91c02151f561a0450c0f} 
+{\bfseries Parque} ()
+\begin{DoxyCompactList}\small\item\em Constructor por defecto de un \doxylink{class_parque}{Parque}. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{class_parque_a139183714ef1cab5b09311c97c37488a}{Parque}} (int cod, string nombre)
+\begin{DoxyCompactList}\small\item\em Constructor parametrizado de un \doxylink{class_parque}{Parque}. \end{DoxyCompactList}\item 
+\Hypertarget{class_parque_a6a5ec17e0d6160f6709071dc6269ab57}\label{class_parque_a6a5ec17e0d6160f6709071dc6269ab57} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Parque} ()
+\begin{DoxyCompactList}\small\item\em Destructor de un \doxylink{class_parque}{Parque}. \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{class_parque_a22cd7b056df8f4b1eba519c0c6991ba9}{get\+\_\+cod\+\_\+parque}} () const
+\begin{DoxyCompactList}\small\item\em obtener el codigo de un parque \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_parque_aec129faed41072a3ebafe8e6cce21f99}{set\+\_\+cod\+\_\+parque}} (int cod)
+\begin{DoxyCompactList}\small\item\em establecer el codigo de un parque \end{DoxyCompactList}\item 
+string \doxymbox{\hyperlink{class_parque_aae41492b161da8d4954598a27e619bfd}{get\+\_\+nbre\+\_\+parque}} () const
+\begin{DoxyCompactList}\small\item\em obtener el nombre del parque \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_parque_a665761d2de3152cf6673771fe08b2986}{set\+\_\+nbre\+\_\+parque}} (string nombre)
+\begin{DoxyCompactList}\small\item\em establecer el nombre del parque \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{class_v_dinamico}{VDinamico}}$<$ \doxymbox{\hyperlink{class_especie}{Especie}} $>$ \doxymbox{\hyperlink{class_parque_a43c2c185ab3a3a8251128ee9b59437c1}{get\+\_\+especies}} () const
+\begin{DoxyCompactList}\small\item\em Especies de un parque. \end{DoxyCompactList}\item 
+const \doxymbox{\hyperlink{class_v_dinamico}{VDinamico}}$<$ \doxymbox{\hyperlink{class_especie}{Especie}} \texorpdfstring{$\ast$}{*} $>$ \& \doxymbox{\hyperlink{class_parque_a1813f8925988ac69621b05af1c944c54}{get\+\_\+contains}} () const
+\begin{DoxyCompactList}\small\item\em Especies de un parque. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_parque_ac433a6918815bbf56cc2e3063b0629b1}{insertar\+Especie}} (\doxymbox{\hyperlink{class_especie}{Especie}} \&esp)
+\begin{DoxyCompactList}\small\item\em inserta una especie en un parque \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{class_parque_a6a931dd4193868cf157a02f8ac7fd922}{existe\+Nbre\+Com}} (string ncomun)
+\begin{DoxyCompactList}\small\item\em existe un nombre comun \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{class_parque_a98a318be52fe90b15dc750e30a318f23}{existe\+Nbre\+Cie}} (string ncient)
+\begin{DoxyCompactList}\small\item\em existe un nombre cient \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{class_parque_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_parque_a139183714ef1cab5b09311c97c37488a}\index{Parque@{Parque}!Parque@{Parque}}
+\index{Parque@{Parque}!Parque@{Parque}}
+\doxysubsubsection{\texorpdfstring{Parque()}{Parque()}}
+{\footnotesize\ttfamily \label{class_parque_a139183714ef1cab5b09311c97c37488a} 
+Parque::\+\+Parque (\begin{DoxyParamCaption}\item[{int}]{cod}{, }\item[{string}]{nombre}{}\end{DoxyParamCaption})}
+
+
+
+Constructor parametrizado de un \doxylink{class_parque}{Parque}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cod} & codigo del parque \\
+\hline
+{\em nombre} & nombre del parque \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_parque_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_parque_a98a318be52fe90b15dc750e30a318f23}\index{Parque@{Parque}!existeNbreCie@{existeNbreCie}}
+\index{existeNbreCie@{existeNbreCie}!Parque@{Parque}}
+\doxysubsubsection{\texorpdfstring{existeNbreCie()}{existeNbreCie()}}
+{\footnotesize\ttfamily \label{class_parque_a98a318be52fe90b15dc750e30a318f23} 
+bool Parque::\+existe\+Nbre\+Cie (\begin{DoxyParamCaption}\item[{string}]{ncient}{}\end{DoxyParamCaption})}
+
+
+
+existe un nombre cient 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ncient} & el nombre cient \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true si existe 
+
+false si no existe 
+\end{DoxyReturn}
+\Hypertarget{class_parque_a6a931dd4193868cf157a02f8ac7fd922}\index{Parque@{Parque}!existeNbreCom@{existeNbreCom}}
+\index{existeNbreCom@{existeNbreCom}!Parque@{Parque}}
+\doxysubsubsection{\texorpdfstring{existeNbreCom()}{existeNbreCom()}}
+{\footnotesize\ttfamily \label{class_parque_a6a931dd4193868cf157a02f8ac7fd922} 
+bool Parque::\+existe\+Nbre\+Com (\begin{DoxyParamCaption}\item[{string}]{ncomun}{}\end{DoxyParamCaption})}
+
+
+
+existe un nombre comun 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ncomun} & el nombre comun \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true si existe 
+
+false si no existe 
+\end{DoxyReturn}
+\Hypertarget{class_parque_a22cd7b056df8f4b1eba519c0c6991ba9}\index{Parque@{Parque}!get\_cod\_parque@{get\_cod\_parque}}
+\index{get\_cod\_parque@{get\_cod\_parque}!Parque@{Parque}}
+\doxysubsubsection{\texorpdfstring{get\_cod\_parque()}{get\_cod\_parque()}}
+{\footnotesize\ttfamily \label{class_parque_a22cd7b056df8f4b1eba519c0c6991ba9} 
+int Parque::\+get\+\_\+cod\+\_\+parque (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+obtener el codigo de un parque 
+
+\begin{DoxyReturn}{Returns}
+int codigo obtenido del parque 
+\end{DoxyReturn}
+\Hypertarget{class_parque_a1813f8925988ac69621b05af1c944c54}\index{Parque@{Parque}!get\_contains@{get\_contains}}
+\index{get\_contains@{get\_contains}!Parque@{Parque}}
+\doxysubsubsection{\texorpdfstring{get\_contains()}{get\_contains()}}
+{\footnotesize\ttfamily \label{class_parque_a1813f8925988ac69621b05af1c944c54} 
+const \doxymbox{\hyperlink{class_v_dinamico}{VDinamico}}$<$ \doxymbox{\hyperlink{class_especie}{Especie}} \texorpdfstring{$\ast$}{*} $>$ \& Parque::\+get\+\_\+contains (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Especies de un parque. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{class_v_dinamico}{VDinamico$<$\+Especie$>$} especies obtenidas de un parque 
+\end{DoxyReturn}
+\Hypertarget{class_parque_a43c2c185ab3a3a8251128ee9b59437c1}\index{Parque@{Parque}!get\_especies@{get\_especies}}
+\index{get\_especies@{get\_especies}!Parque@{Parque}}
+\doxysubsubsection{\texorpdfstring{get\_especies()}{get\_especies()}}
+{\footnotesize\ttfamily \label{class_parque_a43c2c185ab3a3a8251128ee9b59437c1} 
+\doxymbox{\hyperlink{class_v_dinamico}{VDinamico}}$<$ \doxymbox{\hyperlink{class_especie}{Especie}} $>$ Parque::\+get\+\_\+especies (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Especies de un parque. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{class_v_dinamico}{VDinamico$<$\+Especie$>$} especies obtenidas de un parque 
+\end{DoxyReturn}
+\Hypertarget{class_parque_aae41492b161da8d4954598a27e619bfd}\index{Parque@{Parque}!get\_nbre\_parque@{get\_nbre\_parque}}
+\index{get\_nbre\_parque@{get\_nbre\_parque}!Parque@{Parque}}
+\doxysubsubsection{\texorpdfstring{get\_nbre\_parque()}{get\_nbre\_parque()}}
+{\footnotesize\ttfamily \label{class_parque_aae41492b161da8d4954598a27e619bfd} 
+string Parque::\+get\+\_\+nbre\+\_\+parque (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+obtener el nombre del parque 
+
+\begin{DoxyReturn}{Returns}
+string nombre obtenido del parque 
+\end{DoxyReturn}
+\Hypertarget{class_parque_ac433a6918815bbf56cc2e3063b0629b1}\index{Parque@{Parque}!insertarEspecie@{insertarEspecie}}
+\index{insertarEspecie@{insertarEspecie}!Parque@{Parque}}
+\doxysubsubsection{\texorpdfstring{insertarEspecie()}{insertarEspecie()}}
+{\footnotesize\ttfamily \label{class_parque_ac433a6918815bbf56cc2e3063b0629b1} 
+void Parque::\+insertar\+Especie (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_especie}{Especie}} \&}]{esp}{}\end{DoxyParamCaption})}
+
+
+
+inserta una especie en un parque 
+
+
+\begin{DoxyParams}{Parameters}
+{\em esp} & especie que vamos a insertar \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_parque_aec129faed41072a3ebafe8e6cce21f99}\index{Parque@{Parque}!set\_cod\_parque@{set\_cod\_parque}}
+\index{set\_cod\_parque@{set\_cod\_parque}!Parque@{Parque}}
+\doxysubsubsection{\texorpdfstring{set\_cod\_parque()}{set\_cod\_parque()}}
+{\footnotesize\ttfamily \label{class_parque_aec129faed41072a3ebafe8e6cce21f99} 
+void Parque::\+set\+\_\+cod\+\_\+parque (\begin{DoxyParamCaption}\item[{int}]{cod}{}\end{DoxyParamCaption})}
+
+
+
+establecer el codigo de un parque 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cod} & codigo a establecer del parque \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_parque_a665761d2de3152cf6673771fe08b2986}\index{Parque@{Parque}!set\_nbre\_parque@{set\_nbre\_parque}}
+\index{set\_nbre\_parque@{set\_nbre\_parque}!Parque@{Parque}}
+\doxysubsubsection{\texorpdfstring{set\_nbre\_parque()}{set\_nbre\_parque()}}
+{\footnotesize\ttfamily \label{class_parque_a665761d2de3152cf6673771fe08b2986} 
+void Parque::\+set\+\_\+nbre\+\_\+parque (\begin{DoxyParamCaption}\item[{string}]{nombre}{}\end{DoxyParamCaption})}
+
+
+
+establecer el nombre del parque 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nombre} & nombre a establecer del parque \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}
+\item 
+Parque.\+h\item 
+Parque.\+cpp\end{DoxyCompactItemize}

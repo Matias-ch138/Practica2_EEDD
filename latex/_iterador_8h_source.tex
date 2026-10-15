@@ -1,0 +1,56 @@
+\doxysection{Iterador.\+h}
+\hypertarget{_iterador_8h_source}{}\label{_iterador_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ ITERADOR\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ ITERADOR\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <stdexcept>}}
+\DoxyCodeLine{00006\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}Nodo.h"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_lista_d_enlazada}{ListaDEnlazada}};}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_iterador_a95667696efab8089c63826a5fe3d23bc}{Iterador}}\ \{}
+\DoxyCodeLine{00014\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00015\ \ \ \ \ \doxymbox{\hyperlink{class_nodo}{Nodo<T>}}*\ nodo\_;}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ U>\ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }ListaDEnlazada;}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00023\ \ \ \ \ \doxymbox{\hyperlink{class_iterador_a95667696efab8089c63826a5fe3d23bc}{Iterador}}()\ :\ nodo\_(0)\ \{\}}
+\DoxyCodeLine{00029\ \ \ \ \ \doxymbox{\hyperlink{class_iterador_ab9539d5cae5911f94183dc3a5eb8661b}{Iterador}}(\doxymbox{\hyperlink{class_nodo}{Nodo<T>}}*\ nodo)\ :\ nodo\_(nodo)\ \{\}}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{class_iterador_adefdc785232177e44459a65376a42bbc}{fin}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ nodo\_\ ==\ 0;\ \}}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_iterador_aa33f7fd6efd0d1ae75f0bbd22877e8d2}{avanza}}()\ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (nodo\_\ ==\ 0)\ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ out\_of\_range(\textcolor{stringliteral}{"{}[Iterador::avanza]:\ El\ iterador\ esta\ al\ final."{}});}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ nodo\_\ =\ nodo\_-\/>sig\_;}
+\DoxyCodeLine{00046\ \ \ \ \ \}}
+\DoxyCodeLine{00053\ \ \ \ \ T\&\ \doxymbox{\hyperlink{class_iterador_a4574fa7cbc1bdff92afbffd51f8dd1ad}{getdato}}()\ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (nodo\_\ ==\ 0)\ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ out\_of\_range(\textcolor{stringliteral}{"{}[Iterador::getdato]:\ El\ iterador\ apunta\ a\ la\ cola."{}});}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ nodo\_-\/>dato\_;}
+\DoxyCodeLine{00058\ \ \ \ \ \}}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{class_iterador_ab96fa8bc7890d78610700ce338d12612}{hayAnterior}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ nodo\_\ !=\ 0\ \&\&\ nodo\_-\/>ant\_\ !=\ 0;\ \}}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{class_iterador_ae8129958ab97fd31b33a1227bb24f9ae}{haySiguiente}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ nodo\_\ !=\ 0\ \&\&\ nodo\_-\/>sig\_\ !=\ 0;\ \}}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_iterador_a4fa88fd53fce632d9eaaca504003e7c3}{anterior}}()\ \{}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (nodo\_\ ==\ 0\ ||\ nodo\_-\/>ant\_\ ==\ 0)\ \{}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ out\_of\_range(\textcolor{stringliteral}{"{}[Iterador::anterior]:\ No\ hay\ elemento\ anterior."{}});}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ nodo\_\ =\ nodo\_-\/>ant\_;}
+\DoxyCodeLine{00082\ \ \ \ \ \}}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_iterador_a3437fb728fcaacc2bd9e3685ebd2b784}{siguiente}}()\ \{}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (nodo\_\ ==\ 0\ ||\ nodo\_-\/>sig\_\ ==\ 0)\ \{}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ out\_of\_range(\textcolor{stringliteral}{"{}[Iterador::siguiente]:\ No\ hay\ elemento\ siguiente."{}});}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ nodo\_\ =\ nodo\_-\/>sig\_;}
+\DoxyCodeLine{00092\ \ \ \ \ \}}
+\DoxyCodeLine{00098\ \ \ \ \ T\&\ \doxymbox{\hyperlink{class_iterador_a847bc22055e6d52f7894411e4ac70383}{dato}}()\ \{\ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{class_iterador_a4574fa7cbc1bdff92afbffd51f8dd1ad}{getdato}}();\ \}}
+\DoxyCodeLine{00099\ \};}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}
