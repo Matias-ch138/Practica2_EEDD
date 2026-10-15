@@ -84,19 +84,25 @@ int main()
 
     cout<<endl<<"insertar el dato 100 delante del 101"<<endl;
     Iterador<int> itint = lista.iterador();
-    while (itint.getdato() != 102)
+    while (!itint.fin() && itint.getdato() != 101)
     {
         itint.avanza();
     }
-    lista.inserta(itint, 100);
+    if (!itint.fin())
+    {
+        lista.inserta(itint, 100);
+    }
     mostrarLista(lista);
 
     itint = lista.iterador();
-    while (itint.getdato() != 98)
+    while (!itint.fin() && itint.getdato() != 100)
     {
         itint.avanza();
     }
-    lista.inserta(itint, 99);
+    if (!itint.fin())
+    {
+        lista.inserta(itint, 99);
+    }
     mostrarLista(lista);
 
     cout<<endl<<"Borrar los 10 primeros y los 10 últimos"<<endl;
@@ -104,6 +110,21 @@ int main()
     {
         lista.borraInicio();
         lista.borraFinal();
+    }
+    mostrarLista(lista);
+
+    cout<<endl<<"Borrar de la lista todos los múltiplos de 10"<<endl;
+    for (Iterador<int> it = lista.iterador(); !it.fin();)
+    {
+        if (it.getdato() % 10 == 0)
+        {
+            lista.borra(it);
+            it = lista.iterador();
+        }
+        else
+        {
+            it.avanza();
+        }
     }
     mostrarLista(lista);
 
@@ -198,7 +219,7 @@ int main()
 
     cout << endl << "BUSCAR PARQUES JUAN CARLOS III Y VIVERO DE MIGAS CALIENTES" << endl;
     //No debe estar
-    Iterador<Parque> it = buscaParque(cp.get_parks(), "JUAN CARLOS III");
+    Iterador<Parque> it = buscaParque(cp.get_parks(), "PARQUE JUAN CARLOS III");
     if (it.fin())
     {
         cout << "  No se ha encontrado parque JUAN CARLOS III" << endl;
@@ -230,21 +251,7 @@ int main()
     }
 
     cout<< endl<<"CONTAR CUÁNTOS PARQUES TIENEN LA ESPECIE CON NOMBRE COMÚN ABETO"<<endl;
-    it = cp.get_parks().iterador();
-    int total = 0;
-    for (it; !it.fin(); it.avanza())
-    {
-    const VDinamico<Especie*>& esp = it.getdato().get_contains();
-        for (int i =0; i < esp.gettLogico(); ++i)
-        {
-            string nombreComun = esp[i]->get_nombre_comun();
-            if (nombreComun.find("Abeto") != string::npos)
-            {
-                ++total;
-                break;
-            }
-        }
-    }
+    int total = cp.contarEspecieParque("Abeto");
     cout<<"  Total: "<<total<<endl;
     cout<<"==========================="<<endl;
     cout<<"Parte Parejas: "<<endl;

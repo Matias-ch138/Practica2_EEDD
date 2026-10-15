@@ -47,7 +47,7 @@ bool Parque::existeNbreCom(string ncomun) {
     return false;
 }
 
-bool Parque::existenNbreCie(string ncient) {
+bool Parque::existeNbreCie(string ncient) {
     for (unsigned int i = 0; i < contains_.gettLogico(); ++i) {
         if (contains_[i]->getnombre_cientifico() == ncient) {
             return true;

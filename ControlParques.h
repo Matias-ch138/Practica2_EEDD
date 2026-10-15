@@ -23,7 +23,7 @@ public:
     void asignarEspecieParque(Especie &e, Parque &p);
     int contarEspecieParque(string ncomun);
     VDinamico<Especie> listadoEspecieSubNbre(string cadena);
-    Parque buscarParque(string nbre_parque);
+    Parque* buscarParque(const string& nbre_parque);
     bool eliminarParque(string nombre);
 
     VDinamico<Especie>& get_varieties();

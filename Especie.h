@@ -57,9 +57,9 @@ public:
         if (tipoPlanta_ == "PALMACEA") return PALMACEA;
         if (tipoPlanta_ == "HERB_PERENNES") return HERB_PERENNES;
         if (tipoPlanta_ == "FRONDOSA") return FRONDOSA;
-        if (tipoPlanta_ == "TAPIZANTE_TREPADORA") return TAPIZANTE_TREPADORA;
-        if (tipoPlanta_ == "CACTACEA_SUCULENTA") return CACTACEA_SUCULENTA;
-        if (tipoPlanta_ == "SUBTROPICAL_TROPICAL") return SUBTROPICAL_TROPICAL;
+        if (tipoPlanta_ == "TAPIZANTE_TREPADORA" || tipoPlanta_ == "TAPIZANTE/TREPADORA") return TAPIZANTE_TREPADORA;
+        if (tipoPlanta_ == "CACTACEA_SUCULENTA" || tipoPlanta_ == "CACTACEA/SUCULENTA") return CACTACEA_SUCULENTA;
+        if (tipoPlanta_ == "SUBTROPICAL_TROPICAL" || tipoPlanta_ == "SUBTROPICAL/TROPICAL") return SUBTROPICAL_TROPICAL;
         if (tipoPlanta_ == "HERB_ANUAL") return HERB_ANUAL;
         if (tipoPlanta_ == "HERB_ANUALES") return HERB_ANUALES;
         return OTRO;

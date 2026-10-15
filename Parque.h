@@ -29,7 +29,7 @@ public:
 
     void insertarEspecie(Especie &esp);
     bool existeNbreCom(string ncomun);
-    bool existenNbreCie(string ncient);
+    bool existeNbreCie(string ncient);
 };
 
 #endif

@@ -2,6 +2,7 @@
 #define LISTA_D_ENLAZADA_H
 
 #include <iostream>
+#include <stdexcept>
 using namespace std;
 #include "Nodo.h"
 #include "Iterador.h"
@@ -38,8 +39,21 @@ public:
         return *this;
     }
 
-    T& inicio() { return cabecera_->dato_; }
-    T& final() { return cola_->dato_; }
+    T& inicio() {
+        if (cabecera_ == 0) {
+            throw out_of_range("[ListaDEnlazada::inicio]: La lista esta vacia.");
+        }
+        return cabecera_->dato_;
+    }
+
+    T& Fin() {
+        if (cola_ == 0) {
+            throw out_of_range("[ListaDEnlazada::Fin]: La lista esta vacia.");
+        }
+        return cola_->dato_;
+    }
+
+    T& final() { return Fin(); }
 
     Iterador<T> iterador() { return Iterador<T>(cabecera_); }
     Iterador<T> iteradorInicio() { return Iterador<T>(cabecera_); }
@@ -85,7 +99,9 @@ public:
     }
 
     void borraInicio() {
-        if (cabecera_ == 0) return;
+        if (cabecera_ == 0) {
+            throw out_of_range("[ListaDEnlazada::borraInicio]: La lista esta vacia.");
+        }
 
         Nodo<T>* borrado = cabecera_;
         cabecera_ = cabecera_->sig_;
@@ -100,7 +116,9 @@ public:
     }
 
     void borraFinal() {
-        if (cola_ == 0) return;
+        if (cola_ == 0) {
+            throw out_of_range("[ListaDEnlazada::borraFinal]: La lista esta vacia.");
+        }
 
         Nodo<T>* borrado = cola_;
         cola_ = cola_->ant_;
@@ -115,7 +133,10 @@ public:
     }
 
     void borra(Iterador<T>& i) {
-        if (i.nodo_ == 0) return;
+        if (i.nodo_ == 0) {
+            throw out_of_range("[ListaDEnlazada::borra]: El iterador esta al final.");
+        }
+        Nodo<T>* siguiente = i.nodo_->sig_;
 
         if (i.nodo_ == cabecera_) {
             borraInicio();
@@ -128,19 +149,21 @@ public:
             delete borrado;
             tam_--;
         }
+        i.nodo_ = siguiente;
     }
 
     unsigned int tam() { return tam_; }
-    ListaDEnlazada<T>& concatena(const ListaDEnlazada& l) {
+    ListaDEnlazada<T> concatena(const ListaDEnlazada& l) const {
+        ListaDEnlazada<T> resultado(*this);
         Nodo<T>* actual = l.cabecera_;
         while (actual != 0) {
-            insertaFin(actual->dato_);
+            resultado.insertaFin(actual->dato_);
             actual = actual->sig_;
         }
-        return *this;
+        return resultado;
     }
 
-    ListaDEnlazada<T>& operator+(const ListaDEnlazada& l) {
+    ListaDEnlazada<T> operator+(const ListaDEnlazada& l) const {
         return concatena(l);
     }
 

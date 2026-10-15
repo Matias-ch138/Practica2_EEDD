@@ -7,6 +7,36 @@
 #include "ControlParques.h"
 #include "LectorCSV.h"
 using namespace std;
+
+static bool leerCampoCSV(const string& linea, size_t& posicion, string& campo) {
+    campo.clear();
+    bool entreComillas = posicion < linea.size() && linea[posicion] == '"';
+    if (entreComillas) {
+        ++posicion;
+    }
+
+    while (posicion < linea.size()) {
+        char caracter = linea[posicion];
+        if (entreComillas && caracter == '"') {
+            if (posicion + 1 < linea.size() && linea[posicion + 1] == '"') {
+                campo += '"';
+                posicion += 2;
+            } else {
+                entreComillas = false;
+                ++posicion;
+            }
+        } else if (!entreComillas && caracter == ',') {
+            ++posicion;
+            return true;
+        } else {
+            campo += caracter;
+            ++posicion;
+        }
+    }
+
+    return !entreComillas;
+}
+
 ControlParques::ControlParques(){
     
 }
@@ -14,6 +44,7 @@ ControlParques::ControlParques(const string& rutaEspecies, const string& rutaPar
 // 1. Cargar el vector dinámico de especies usando la clase LectorCSV
     LectorCSV lector;
     lector.cargar(varieties, rutaEspecies);
+    varieties.ordenar();
 
     // 2. Cargar la lista doblemente enlazada de parques desde el CSV
     ifstream fichero(rutaParques);
@@ -23,11 +54,11 @@ ControlParques::ControlParques(const string& rutaEspecies, const string& rutaPar
         while (getline(fichero, linea)) {
             if (linea.empty()) continue;
             
-            stringstream ss(linea);
             string cod_str, nombre_parque;
-            
-            // Asumimos que el CSV viene en formato "ID,Nombre"
-            if (getline(ss, cod_str, ',') && getline(ss, nombre_parque, ',')) {
+            size_t posicion = 0;
+
+            if (leerCampoCSV(linea, posicion, cod_str) &&
+                leerCampoCSV(linea, posicion, nombre_parque)) {
                 try {
                     int cod = stoi(cod_str);
                     Parque p(cod, nombre_parque);
@@ -69,15 +100,15 @@ VDinamico<Especie> ControlParques::listadoEspecieSubNbre(string cadena){
     return resultados;
 }
 
-Parque ControlParques::buscarParque(string nbre_parque){
+Parque* ControlParques::buscarParque(const string& nbre_parque){
     Iterador<Parque> it = parks.iteradorInicio();
     while(!it.fin()){
         if(it.getdato().get_nbre_parque() == nbre_parque){
-            return it.getdato();
+            return &it.getdato();
         }
       it.avanza();  
     }
-    return Parque();
+    return nullptr;
 }
 
 bool ControlParques::eliminarParque(string nombre) {
