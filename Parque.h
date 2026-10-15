@@ -23,7 +23,6 @@ public:
 
     string get_nbre_parque() const;
     void set_nbre_parque(string nombre);
-
     VDinamico<Especie> get_especies() const;
     const VDinamico<Especie*>& get_contains() const;
 

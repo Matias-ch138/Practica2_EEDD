@@ -15,8 +15,16 @@ private:
     unsigned int tam_;
 
 public:
+/**
+ * @brief Constructor por defecto de ListaDEnlazada
+ * 
+ */
     ListaDEnlazada() : cabecera_(0), cola_(0), tam_(0) {}
-
+/**
+ * @brief Construct de copia de ListaDEnlazada
+ * 
+ * @param origen Objeto a copiar
+ */
     ListaDEnlazada(const ListaDEnlazada& origen) : cabecera_(0), cola_(0), tam_(0) {
         Nodo<T>* actual = origen.cabecera_;
         while (actual != 0) {
@@ -24,7 +32,12 @@ public:
             actual = actual->sig_;
         }
     }
-
+/**
+ * @brief operador de asignación de ListaDEnlazada
+ * 
+ * @param origen objeto que se va a asignar
+ * @return ListaDEnlazada& objeto asignado
+ */
     ListaDEnlazada& operator=(const ListaDEnlazada& origen) {
         if (this != &origen) {
             while (cabecera_ != 0) {
@@ -38,14 +51,24 @@ public:
         }
         return *this;
     }
-
+/**
+ * @brief obtener dato de la cabecera de la lista
+ * 
+ * @return T& el dato que hay en la cabecera
+ * @throws out_of_range si la lista esta vacia
+ */
     T& inicio() {
         if (cabecera_ == 0) {
             throw out_of_range("[ListaDEnlazada::inicio]: La lista esta vacia.");
         }
         return cabecera_->dato_;
     }
-
+/**
+ * @brief obtener dato de la cola de la lista
+ * 
+ * @return T& dato de la cola de la lista
+ * @throws out_of_range si la lista esta vacia
+ */
     T& Fin() {
         if (cola_ == 0) {
             throw out_of_range("[ListaDEnlazada::Fin]: La lista esta vacia.");
@@ -54,11 +77,29 @@ public:
     }
 
     T& final() { return Fin(); }
-
+/**
+ * @brief constructor de iterador para la lista apuntando a la cabecera
+ * 
+ * @return Iterador<T> el iterador apuntando a la cabecera
+ */
     Iterador<T> iterador() { return Iterador<T>(cabecera_); }
+    /**
+ * @brief constructor de iterador para la lista apuntando a la cabecera
+ * 
+ * @return Iterador<T> el iterador apuntando a la cabecera
+ */
     Iterador<T> iteradorInicio() { return Iterador<T>(cabecera_); }
+/**
+ * @brief constructor de iterador para la lista apuntando a la cola
+ * 
+ * @return Iterador<T> el iterador apuntando a la cola
+ */
     Iterador<T> iteradorFinal() { return Iterador<T>(cola_); }
-
+/**
+ * @brief insertar un dato al final de la lista
+ * 
+ * @param dato que insertamos al final de la lista
+ */
     void insertaFin(const T& dato) {
         Nodo<T>* nuevo = new Nodo<T>(dato, cola_, 0);
         if (cabecera_ == 0) {
@@ -70,7 +111,12 @@ public:
         cola_ = nuevo;
         tam_++;
     }
-
+/**
+ * @brief insertar un dato según la posición de un iterador en la lista
+ * 
+ * @param i el iterador apuntando a una posición de la lista 
+ * @param dato que queremos almacenar en esa posición concreta de la lista
+ */
     void inserta(Iterador<T>& i, const T& dato) {
         if (i.nodo_ == 0) {
             insertaFin(dato);
@@ -85,7 +131,11 @@ public:
             tam_++;
         }
     }
-
+/**
+ * @brief insertar un dato al inicio de la lista
+ * 
+ * @param dato que queremos almacenar al inicio de la lista
+ */
     void insertaInicio(const T& dato) {
         Nodo<T>* nuevo = new Nodo<T>(dato, 0, cabecera_);
         if (cola_ == 0) {
@@ -97,7 +147,10 @@ public:
         cabecera_ = nuevo;
         tam_++;
     }
-
+/**
+ * @brief borrar el dato del inicio
+ * @throws out_of_range si la lista esta vacia
+ */
     void borraInicio() {
         if (cabecera_ == 0) {
             throw out_of_range("[ListaDEnlazada::borraInicio]: La lista esta vacia.");
@@ -114,7 +167,10 @@ public:
         }
         tam_--;
     }
-
+/**
+ * @brief borrar el dato del final de la lista
+ * @throws out_of_range si la lista esta vacia
+ */
     void borraFinal() {
         if (cola_ == 0) {
             throw out_of_range("[ListaDEnlazada::borraFinal]: La lista esta vacia.");
@@ -131,7 +187,12 @@ public:
         }
         tam_--;
     }
-
+/**
+ * @brief borrar un dato de la lista según la posición de un iterador en ella
+ * 
+ * @param i iterador apuntando a una posición de la lista
+ * @throws out_of_range si la lista esta vacia
+ */
     void borra(Iterador<T>& i) {
         if (i.nodo_ == 0) {
             throw out_of_range("[ListaDEnlazada::borra]: El iterador esta al final.");
@@ -151,8 +212,18 @@ public:
         }
         i.nodo_ = siguiente;
     }
-
+/**
+ * @brief devuelve el tamaño de la lista
+ * 
+ * @return unsigned int el tamño de la lista
+ */
     unsigned int tam() { return tam_; }
+    /**
+     * @brief concatena dos listas
+     * 
+     * @param l lista que vamos a concatenar 
+     * @return ListaDEnlazada<T> lista concatenada 
+     */
     ListaDEnlazada<T> concatena(const ListaDEnlazada& l) const {
         ListaDEnlazada<T> resultado(*this);
         Nodo<T>* actual = l.cabecera_;
@@ -162,11 +233,19 @@ public:
         }
         return resultado;
     }
-
+/**
+ * @brief operador de concatenación
+ * 
+ * @param l lista que vamos a concatenar
+ * @return ListaDEnlazada<T> lista concatenada
+ */
     ListaDEnlazada<T> operator+(const ListaDEnlazada& l) const {
         return concatena(l);
     }
-
+/**
+ * @brief destructor de la lista
+ * 
+ */
     ~ListaDEnlazada() {
         while (cabecera_ != 0) {
             borraInicio();
