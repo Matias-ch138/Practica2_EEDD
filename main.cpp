@@ -142,7 +142,17 @@ int main()
     cout<<endl<<"PULSAR CUALQUIER TECLA PARA CONTINUAR"<<endl;
     std::cin.get();
 
-    cout << "PROGRAMA DE PRUEBA 2" << endl;
+    int opcionPrueba2;
+    cout << endl << "Selecciona la versión de la Prueba 2:" << endl;
+    cout << "1. Original" << endl;
+    cout << "2. Usando los métodos de las clases" << endl;
+    cin >> opcionPrueba2;
+
+    switch (opcionPrueba2)
+    {
+    case 1:
+    {
+    cout << "PROGRAMA DE PRUEBA 2 - ORIGINAL" << endl;
     ControlParques cp(RUTA_ESPECIES, RUTA_PARQUES);
 
     //Variables fuera del bucle por eficiencia
@@ -264,23 +274,118 @@ int main()
     cout<< endl<<"CONTAR CUÁNTOS PARQUES TIENEN LA ESPECIE CON NOMBRE COMÚN ABETO"<<endl;
     int total = cp.contarEspecieParque("Abeto");
     cout<<"  Total: "<<total<<endl;
-    cout<<"==========================="<<endl;
-    cout<<"Parte Parejas: "<<endl;
-    string parqueEliminar= "VIVERO DE MIGAS CALIENTES";
-    if(cp.eliminarParque(parqueEliminar)){
-        cout<<"Se ha borrado el parque cuyo nombre es: "<<parqueEliminar<<endl;
-    }else cout<<"No se ha borrado ningún parque"<<endl;
-    cout<<"Comprobación de que se ha eliminado el parque: "<<endl;
-    Iterador<Parque> it3 = buscaParque(cp.get_parks(), "VIVERO DE MIGAS CALIENTES");
-    if (it3.fin())
+        break;
+    }
+    case 2:
     {
-        cout << "  No se ha encontrado parque VIVERO DE MIGAS CALIENTES" << endl;
+        cout << "PROGRAMA DE PRUEBA 2 - USANDO LOS MÉTODOS" << endl;
+        ControlParques cp(RUTA_ESPECIES, RUTA_PARQUES);
+        VDinamico<Especie>& especies = cp.get_varieties();
+        ListaDEnlazada<Parque>& parques = cp.get_parks();
+
+        for (unsigned int i = 0; i < especies.gettLogico(); ++i)
+        {
+            Especie& especie = especies[i];
+            int tipo = especie.get_tipo_planta();
+            bool tipoPar = tipo == ARBUSTO || tipo == CONIFERA || tipo == PALMACEA ||
+                tipo == HERB_PERENNES || tipo == FRONDOSA;
+            bool tipoImpar = tipo == TAPIZANTE_TREPADORA || tipo == CACTACEA_SUCULENTA ||
+                tipo == SUBTROPICAL_TROPICAL || tipo == HERB_ANUAL || tipo == HERB_ANUALES;
+
+            for (Iterador<Parque> it = parques.iterador(); !it.fin(); it.avanza())
+            {
+                Parque& parque = it.getdato();
+                int codigo = parque.get_cod_parque();
+                if ((tipoPar && codigo % 2 == 0) || (tipoImpar && codigo % 2 != 0))
+                {
+                    cp.asignarEspecieParque(especie, parque);
+                }
+            }
+        }
+
+        cout << endl << "ASIGNACIÓN DE ESPECIES A LOS PARQUES" << endl;
+        for (Iterador<Parque> it = parques.iterador(); !it.fin(); it.avanza())
+        {
+            Parque& parque = it.getdato();
+            cout << "  Codigo: " << parque.get_cod_parque() << " nombre: "
+                 << parque.get_nbre_parque() << " total especies: "
+                 << parque.get_contains().gettLogico() << endl;
+        }
+
+        cout << endl << "BUSCAR EN PARQUE PRINCESA LEONOR" << endl;
+        Parque* princesaLeonor = cp.buscarParque("PARQUE PRINCESA LEONOR");
+        if (princesaLeonor == nullptr)
+        {
+            cout << "  No se ha encontrado el parque" << endl;
+        }
+        else
+        {
+            cout << "  Eucalipto rojo: "
+                 << (princesaLeonor->existeNbreCom("Eucalipto rojo") ? "encontrado" : "no encontrado") << endl;
+            cout << "  Arce de sierra: "
+                 << (princesaLeonor->existeNbreCom("Arce de sierra") ? "encontrado" : "no encontrado") << endl;
+        }
+
+        cout << endl << "BUSCAR EN PARQUE MADRID RIO" << endl;
+        Parque* madridRio = cp.buscarParque("PARQUE MADRID RIO");
+        if (madridRio == nullptr)
+        {
+            cout << "  No se ha encontrado el parque" << endl;
+        }
+        else
+        {
+            cout << "  Hebe floribunda: "
+                 << (madridRio->existeNbreCie("Hebe floribunda") ? "encontrada" : "no encontrada") << endl;
+            cout << "  Ananas comosa: "
+                 << (madridRio->existeNbreCie("Ananas comosa") ? "encontrada" : "no encontrada") << endl;
+        }
+
+        cout << endl << "BUSCAR PARQUES JUAN CARLOS III Y VIVERO DE MIGAS CALIENTES" << endl;
+        const string nombresParques[] = { "PARQUE JUAN CARLOS III", "VIVERO DE MIGAS CALIENTES" };
+        for (const string& nombre : nombresParques)
+        {
+            Parque* parque = cp.buscarParque(nombre);
+            if (parque == nullptr)
+            {
+                cout << "  No se ha encontrado parque " << nombre << endl;
+            }
+            else
+            {
+                cout << "  Codigo: " << parque->get_cod_parque() << " nombre: "
+                     << parque->get_nbre_parque() << endl;
+            }
+        }
+
+        cout << endl << "BUSCAR ESPECIES CON LA SUBCADENA ROSA EN SU NOMBRE CIENTÍFICO" << endl;
+        VDinamico<Especie> especiesRosa = cp.listadoEspecieSubNbre("rosa");
+        for (unsigned int i = 0; i < especiesRosa.gettLogico(); ++i)
+        {
+            especiesRosa[i].mostrarInfo();
+        }
+
+        cout << endl << "CONTAR CUÁNTOS PARQUES TIENEN LA ESPECIE ABETO" << endl;
+        cout << "  Total: " << cp.contarEspecieParque("Abeto") << endl;
+        break;
+    }
+    default:
+        cout << "Opcion no valida" << endl;
+        return 1;
+    }
+
+    cout << "===========================" << endl;
+    cout << "PARTE PAREJAS" << endl;
+    ControlParques cpParejas(RUTA_ESPECIES, RUTA_PARQUES);
+    const string parqueEliminar = "VIVERO DE MIGAS CALIENTES";
+    if (cpParejas.eliminarParque(parqueEliminar))
+    {
+        cout << "Se ha borrado el parque cuyo nombre es: " << parqueEliminar << endl;
     }
     else
     {
-        cout<<"  codigo: " << to_string(it3.getdato().get_cod_parque()) <<" nombre: "<< it3.getdato().get_nbre_parque()<< endl;
+        cout << "No se ha borrado ningun parque" << endl;
     }
-
+    cout << "Comprobacion de que se ha eliminado el parque: "
+         << (cpParejas.buscarParque(parqueEliminar) == nullptr ? "ya no existe" : "todavia existe") << endl;
 
     return 0;
 }
