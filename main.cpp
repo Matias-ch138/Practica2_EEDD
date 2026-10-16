@@ -154,8 +154,6 @@ int main()
     {
     cout << "PROGRAMA DE PRUEBA 2 - ORIGINAL" << endl;
     ControlParques cp(RUTA_ESPECIES, RUTA_PARQUES);
-
-    //Variables fuera del bucle por eficiencia
     VDinamico<Especie>* especies = &cp.get_varieties();
     ListaDEnlazada<Parque>* parques = &cp.get_parks();
 
@@ -169,12 +167,10 @@ int main()
             Parque& pq = it.getdato();
             int resto = pq.get_cod_parque() % 2;
 
-            //parques con codigo par
             if ((tipo == ARBUSTO || tipo == CONIFERA || tipo == PALMACEA ||
                 tipo == HERB_PERENNES || tipo == FRONDOSA) && (resto == 0))
             {
                 pq.insertarEspecie(esp);
-                //Parques con codigo impar
             }
             else if ((tipo == TAPIZANTE_TREPADORA || tipo == CACTACEA_SUCULENTA ||
                 tipo == SUBTROPICAL_TROPICAL ||
@@ -196,7 +192,6 @@ int main()
 
     cout << endl << "BUSCAR EN PARQUE PRINCESA LEONOR LOS NOMBRES COMUNES EUCALIPTO ROJO Y ARCE DE SIERRA" << endl;
     Parque& princLeonor = buscaParque(cp.get_parks(), "PARQUE PRINCESA LEONOR").getdato();
-    //Debe estar
     if (buscaEspecieNbrComun(princLeonor.get_contains(), "Eucalipto rojo"))
     {
         cout << "  Encontrado Eucalipto rojo" << endl;
@@ -206,7 +201,6 @@ int main()
         cout << "  No se ha encontrado Eucalipto rojo" << endl;
     }
 
-    //No debe estar
     if (buscaEspecieNbrComun(princLeonor.get_contains(), "Arce de sierra"))
     {
         cout << "  Encontrado Arce de sierra" << endl;
@@ -218,7 +212,6 @@ int main()
 
     cout << endl << "BUSCAR EN PARQUE MADRID RIO LOS NOMBRES CIENTÍFICOS HEBE FLORIBUNDA Y ANANAS COMOSA" << endl;
     Parque& madridRio = buscaParque(cp.get_parks(), "PARQUE MADRID RIO").getdato();
-    //No debe estar
     if (buscaEspecieNbrCientif(madridRio.get_contains(), "Hebe floribunda"))
     {
         cout << "  Encontrado Hebe floribunda" << endl;
@@ -228,7 +221,6 @@ int main()
         cout << "  No se ha encontrado Hebe floribunda" << endl;
     }
 
-    //No debe estar
     if (buscaEspecieNbrCientif(madridRio.get_contains(), "Ananas comosa"))
     {
         cout << "  Encontrado Ananas comosa" << endl;
@@ -239,7 +231,6 @@ int main()
     }
 
     cout << endl << "BUSCAR PARQUES JUAN CARLOS III Y VIVERO DE MIGAS CALIENTES" << endl;
-    //No debe estar
     Iterador<Parque> it = buscaParque(cp.get_parks(), "PARQUE JUAN CARLOS III");
     if (it.fin())
     {
@@ -251,7 +242,6 @@ int main()
     }
 
     Iterador<Parque> it2 = buscaParque(cp.get_parks(), "VIVERO DE MIGAS CALIENTES");
-    //Sí debe estar
     if (it2.fin())
     {
         cout << "  No se ha encontrado parque VIVERO DE MIGAS CALIENTES" << endl;
